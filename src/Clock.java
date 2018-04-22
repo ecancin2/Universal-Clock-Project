@@ -10,7 +10,7 @@
  */
 public class Clock extends javax.swing.JFrame {
 
-    /**
+    /**ws
      * Creates new form Clock
      */
     public Clock() {
