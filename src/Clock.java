@@ -15,9 +15,13 @@ import java.util.Calendar;
 
 public class Clock extends javax.swing.JFrame {
 
+<<<<<<< HEAD
     public Object tz;
 
     /**
+=======
+    /**ws
+>>>>>>> 3037bb8521aec6b31bdc3d4c40a994e5d2de526a
      * Creates new form Clock
      */
     public Clock() {
