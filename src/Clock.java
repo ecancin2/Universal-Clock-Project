@@ -57,6 +57,8 @@ public class Clock extends javax.swing.JFrame{
         currentTime = new javax.swing.JLabel();
         utcTime = new javax.swing.JLabel();
         otherTime = new javax.swing.JLabel();
+        timeDiff = new javax.swing.JLabel();
+        timeDiffLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("World Time");
@@ -108,6 +110,16 @@ public class Clock extends javax.swing.JFrame{
         otherTime.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         otherTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        timeDiff.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        timeDiff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        timeDiff.setText("+ 00:00");
+        timeDiff.setToolTipText("");
+
+        timeDiffLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        timeDiffLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        timeDiffLabel.setText("Time Diff");
+        timeDiffLabel.setToolTipText("");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,7 +142,11 @@ public class Clock extends javax.swing.JFrame{
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(utcLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(utcTime, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(114, 114, 114)))
+                                .addGap(114, 114, 114))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(timeDiff, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(oTimeZoneScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(oTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
@@ -139,6 +155,11 @@ public class Clock extends javax.swing.JFrame{
                         .addGap(312, 312, 312)
                         .addComponent(otherTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(159, 159, 159))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(248, 248, 248)
+                    .addComponent(timeDiffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(398, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +184,14 @@ public class Clock extends javax.swing.JFrame{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(otherTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(currentTime, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
-                .addGap(67, 67, 67))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(timeDiff)
+                .addGap(41, 41, 41))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(228, Short.MAX_VALUE)
+                    .addComponent(timeDiffLabel)
+                    .addGap(70, 70, 70)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,7 +208,7 @@ public class Clock extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -301,6 +329,8 @@ public class Clock extends javax.swing.JFrame{
     private javax.swing.JLabel oTimeZone;
     private javax.swing.JComboBox<String> oTimeZoneScroll;
     private javax.swing.JLabel otherTime;
+    private javax.swing.JLabel timeDiff;
+    private javax.swing.JLabel timeDiffLabel;
     private javax.swing.JLabel utcLabel;
     private javax.swing.JLabel utcTime;
     // End of variables declaration//GEN-END:variables
