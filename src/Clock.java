@@ -47,16 +47,16 @@ public class Clock extends javax.swing.JFrame{
 
         jPanel1 = new javax.swing.JPanel();
         cTimeZone = new javax.swing.JLabel();
-        dTimeZone = new javax.swing.JLabel();
+        oTimeZone = new javax.swing.JLabel();
         cTimeLabel = new javax.swing.JLabel();
-        dTimeLabel = new javax.swing.JLabel();
+        oTimeLabel = new javax.swing.JLabel();
         cTimeZoneScroll = new javax.swing.JComboBox<>();
-        dTimeZoneScroll = new javax.swing.JComboBox<>();
+        oTimeZoneScroll = new javax.swing.JComboBox<>();
         convertButton = new javax.swing.JButton();
         utcLabel = new javax.swing.JLabel();
         currentTime = new javax.swing.JLabel();
         utcTime = new javax.swing.JLabel();
-        destinationTime = new javax.swing.JLabel();
+        otherTime = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("World Time");
@@ -65,17 +65,17 @@ public class Clock extends javax.swing.JFrame{
         cTimeZone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cTimeZone.setText("My Time Zone");
 
-        dTimeZone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        dTimeZone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dTimeZone.setText("Dest Time Zone");
+        oTimeZone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        oTimeZone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        oTimeZone.setText("Other Time Zone");
 
         cTimeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cTimeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cTimeLabel.setText("My Current Time");
 
-        dTimeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        dTimeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dTimeLabel.setText("Dest Time");
+        oTimeLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        oTimeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        oTimeLabel.setText("Dest Time");
 
         cTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver", " " }));
         cTimeZoneScroll.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +84,7 @@ public class Clock extends javax.swing.JFrame{
             }
         });
 
-        dTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver" }));
+        oTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver" }));
 
         convertButton.setText("Convert Time Zone");
         convertButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,8 +105,8 @@ public class Clock extends javax.swing.JFrame{
         utcTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         utcTime.setText("00:00");
 
-        destinationTime.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        destinationTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        otherTime.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        otherTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,12 +132,12 @@ public class Clock extends javax.swing.JFrame{
                                     .addComponent(utcTime, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(114, 114, 114)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dTimeZoneScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(dTimeZone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(oTimeZoneScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(oTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(oTimeZone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(312, 312, 312)
-                        .addComponent(destinationTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(otherTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(159, 159, 159))
         );
         jPanel1Layout.setVerticalGroup(
@@ -146,22 +146,22 @@ public class Clock extends javax.swing.JFrame{
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cTimeZone, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dTimeZone, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(oTimeZone, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(convertButton)
                     .addComponent(cTimeZoneScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dTimeZoneScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(oTimeZoneScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(utcLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dTimeLabel)
+                    .addComponent(oTimeLabel)
                     .addComponent(utcTime, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cTimeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(destinationTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(otherTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(currentTime, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                 .addGap(67, 67, 67))
         );
@@ -209,7 +209,7 @@ public class Clock extends javax.swing.JFrame{
                 Date currzone = new Date();
                 SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
                 time.setTimeZone(TimeZone.getTimeZone(ocz)); 
-                destinationTime.setText(time.format(currzone));
+                otherTime.setText(time.format(currzone));
             }
         });
         t2.setRepeats(false);
@@ -242,12 +242,16 @@ public class Clock extends javax.swing.JFrame{
 
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
         // TODO add your handling code here:
-        otz = dTimeZoneScroll.getSelectedItem();
+        otz = oTimeZoneScroll.getSelectedItem();
         
         String sotz = otz.toString();
         
         if(!currentTime.getText().isEmpty()) {
             showTime2(sotz);
+            
+            // get current time and subtract from other time
+            
+            // display new time as time difference
         }
     }//GEN-LAST:event_convertButtonActionPerformed
 
@@ -292,11 +296,11 @@ public class Clock extends javax.swing.JFrame{
     private javax.swing.JComboBox<String> cTimeZoneScroll;
     private javax.swing.JButton convertButton;
     private javax.swing.JLabel currentTime;
-    private javax.swing.JLabel dTimeLabel;
-    private javax.swing.JLabel dTimeZone;
-    private javax.swing.JComboBox<String> dTimeZoneScroll;
-    private javax.swing.JLabel destinationTime;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel oTimeLabel;
+    private javax.swing.JLabel oTimeZone;
+    private javax.swing.JComboBox<String> oTimeZoneScroll;
+    private javax.swing.JLabel otherTime;
     private javax.swing.JLabel utcLabel;
     private javax.swing.JLabel utcTime;
     // End of variables declaration//GEN-END:variables
