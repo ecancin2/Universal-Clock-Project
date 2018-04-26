@@ -192,7 +192,7 @@ public class Clock extends javax.swing.JFrame{
         t = new Timer(100, new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 Date currzone = new Date();
-                SimpleDateFormat time = new SimpleDateFormat("hh:mma");
+                SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
                 time.setTimeZone(TimeZone.getTimeZone(cz)); 
                 jLabel6.setText(time.format(currzone));
             }
@@ -207,7 +207,7 @@ public class Clock extends javax.swing.JFrame{
         t2 = new Timer(100, new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 Date currzone = new Date();
-                SimpleDateFormat time = new SimpleDateFormat("hh:mma");
+                SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
                 time.setTimeZone(TimeZone.getTimeZone(ocz)); 
                 jLabel8.setText(time.format(currzone));
             }
