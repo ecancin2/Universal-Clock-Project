@@ -179,13 +179,14 @@
         <Component class="javax.swing.JComboBox" name="cTimeZoneScroll">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
+              <StringArray count="7">
                 <StringItem index="0" value="Select Time Zone"/>
-                <StringItem index="1" value="America/Chicago"/>
-                <StringItem index="2" value="America/New_York"/>
-                <StringItem index="3" value="America/Los_Angeles"/>
-                <StringItem index="4" value="America/Denver"/>
-                <StringItem index="5" value=" "/>
+                <StringItem index="1" value="Default - GMT"/>
+                <StringItem index="2" value="America/Chicago"/>
+                <StringItem index="3" value="America/New_York"/>
+                <StringItem index="4" value="America/Los_Angeles"/>
+                <StringItem index="5" value="America/Denver"/>
+                <StringItem index="6" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -199,12 +200,13 @@
         <Component class="javax.swing.JComboBox" name="oTimeZoneScroll">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="6">
                 <StringItem index="0" value="Select Time Zone"/>
-                <StringItem index="1" value="America/Chicago"/>
-                <StringItem index="2" value="America/New_York"/>
-                <StringItem index="3" value="America/Los_Angeles"/>
-                <StringItem index="4" value="America/Denver"/>
+                <StringItem index="1" value="Default - GMT"/>
+                <StringItem index="2" value="America/Chicago"/>
+                <StringItem index="3" value="America/New_York"/>
+                <StringItem index="4" value="America/Los_Angeles"/>
+                <StringItem index="5" value="America/Denver"/>
               </StringArray>
             </Property>
           </Properties>

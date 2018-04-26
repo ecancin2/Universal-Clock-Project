@@ -79,14 +79,14 @@ public class Clock extends javax.swing.JFrame{
         oTimeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         oTimeLabel.setText("Dest Time");
 
-        cTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver", " " }));
+        cTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver", " " }));
         cTimeZoneScroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTimeZoneScrollActionPerformed(evt);
             }
         });
 
-        oTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver" }));
+        oTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver" }));
 
         convertButton.setText("Convert Time Zone");
         convertButton.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +274,7 @@ public class Clock extends javax.swing.JFrame{
         
         String sotz = otz.toString();
         
-        if(!currentTime.getText().isEmpty()) {
+        if(!currentTime.getText().isEmpty() && tz != otz) {
             showTime2(sotz);
             
             // get current time and subtract from other time
