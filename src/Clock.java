@@ -87,6 +87,11 @@ public class Clock extends javax.swing.JFrame{
         });
 
         oTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver" }));
+        oTimeZoneScroll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oTimeZoneScrollActionPerformed(evt);
+            }
+        });
 
         convertButton.setText("Convert Time Diff.");
         convertButton.addActionListener(new java.awt.event.ActionListener() {
@@ -269,16 +274,6 @@ public class Clock extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_cTimeZoneScrollActionPerformed
 
-    private void oTimeZoneScrollActionPerformed(java.awt.event.ActionEvent evt){
-        // TODO add your handling code here:
-        otz = oTimeZoneScroll.getSelectedItem();
-        
-        String sotz = otz.toString();
-        
-        if(!currentTime.getText().isEmpty() && tz != otz) {
-            showTime2(sotz);
-        }
-    }
     
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
         // TODO add your handling code here:
@@ -288,6 +283,18 @@ public class Clock extends javax.swing.JFrame{
             
             // display new time as time difference
     }//GEN-LAST:event_convertButtonActionPerformed
+
+    private void oTimeZoneScrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oTimeZoneScrollActionPerformed
+        // TODO add your handling code here:
+  
+        otz = oTimeZoneScroll.getSelectedItem();
+        
+        String sotz = otz.toString();
+        
+        if(sotz != "Select Time Zone") {
+            showTime2(sotz);
+        }
+    }//GEN-LAST:event_oTimeZoneScrollActionPerformed
 
     /**
      * @param args the command line arguments
