@@ -25,6 +25,8 @@ public class Clock extends javax.swing.JFrame{
     
     public Object tz;
     public Object otz;
+    public Timer timeClock;
+    public Date masterTime;
     //public Object tz2;
     //public Object tznow;
 
@@ -33,7 +35,19 @@ public class Clock extends javax.swing.JFrame{
      */
     public Clock() {
         initComponents();
+        SimpleDateFormat time = new SimpleDateFormat("hh:mma z");        
+        timeClock = new Timer(1000, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            masterTime = new Date();
+            time.setTimeZone(TimeZone.getTimeZone(tz.toString()));
+            currentTime.setText(time.format(masterTime));
+            
+            
+            }
+        });
         showUTC();
+        
+        
     }
 
     /**
@@ -217,10 +231,10 @@ public class Clock extends javax.swing.JFrame{
     public void showTime(String cz){ 
         t = new Timer(100, new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                Date currzone = new Date();
-                SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
-                time.setTimeZone(TimeZone.getTimeZone(cz)); 
-                currentTime.setText(time.format(currzone));
+//                Date currzone = new Date();
+//                SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
+//                time.setTimeZone(TimeZone.getTimeZone(cz)); 
+//                currentTime.setText(time.format(currzone));
             }
         });
         t.setRepeats(false);
@@ -262,6 +276,7 @@ public class Clock extends javax.swing.JFrame{
         if(stz != "Select Time Zone"){
             showTime(stz);
         }
+        timeClock.start();
     }//GEN-LAST:event_cTimeZoneScrollActionPerformed
 
     
