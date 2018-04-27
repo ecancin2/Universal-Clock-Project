@@ -270,7 +270,10 @@ public class Clock extends javax.swing.JFrame{
         
             
             // get current time and subtract from other time
-            
+            int cTime = Integer.parseInt(currentTime.getText().substring(0,2));
+            int oTime = Integer.parseInt(otherTime.getText().substring(0,2));
+            int ocTime = oTime - cTime;
+            timeDiff.setText(Integer.toString(ocTime));
             // display new time as time difference
     }//GEN-LAST:event_convertButtonActionPerformed
 
