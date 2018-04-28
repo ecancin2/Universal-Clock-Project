@@ -23,12 +23,16 @@ import javax.swing.Timer;
 
 public class Clock extends javax.swing.JFrame{  
     
+    //Object used for each selection in the first combo box
     public Object tz;
+    
+    //Object used for each selection in the second combo box
     public Object otz;
+    
     public Timer timeClock;
+    public Timer timeClock2;
     public Date masterTime;
-    //public Object tz2;
-    //public Object tznow;
+    public Date masterTime2;
 
     /**
      * Creates new form Clock
@@ -36,18 +40,34 @@ public class Clock extends javax.swing.JFrame{
     public Clock() {
         initComponents();
         SimpleDateFormat time = new SimpleDateFormat("hh:mma z");        
-        timeClock = new Timer(1000, new ActionListener() {
+        timeClock = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            masterTime = new Date();
-            time.setTimeZone(TimeZone.getTimeZone(tz.toString()));
-            currentTime.setText(time.format(masterTime));
-            
-            
+                masterTime = new Date();
+                time.setTimeZone(TimeZone.getTimeZone(tz.toString()));
+                if(tz.toString().equals("Select Time Zone")){
+                    currentTime.setText("");
+                }
+                else {
+                    currentTime.setText(time.format(masterTime));
+                }
             }
         });
-        showUTC();
         
+        SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z");        
+        timeClock2 = new Timer(100, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                masterTime2 = new Date();
+                time2.setTimeZone(TimeZone.getTimeZone(otz.toString()));
+                if(otz.toString().equals("Select Time Zone")){
+                    otherTime.setText("");
+                }
+                else {
+                    otherTime.setText(time2.format(masterTime2));
+                }
+            }
+        });
         
+        showUTC(); 
     }
 
     /**
@@ -226,36 +246,6 @@ public class Clock extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
  
-    Timer t;
-    
-    public void showTime(String cz){ 
-        t = new Timer(100, new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-//                Date currzone = new Date();
-//                SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
-//                time.setTimeZone(TimeZone.getTimeZone(cz)); 
-//                currentTime.setText(time.format(currzone));
-            }
-        });
-        t.setRepeats(false);
-        t.start();
-    }
-    
-    Timer t2;
-    
-    void showTime2(String ocz){ 
-        t2 = new Timer(100, new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                Date currzone = new Date();
-                SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
-                time.setTimeZone(TimeZone.getTimeZone(ocz)); 
-                otherTime.setText(time.format(currzone));
-            }
-        });
-        t2.setRepeats(false);
-        t2.start();
-    }
-    
     void showUTC(){
         new Timer(100, new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -271,37 +261,36 @@ public class Clock extends javax.swing.JFrame{
         // TODO add your handling code here:
         tz = cTimeZoneScroll.getSelectedItem();
         
-        String stz = tz.toString();
-        
-        if(stz != "Select Time Zone"){
-            showTime(stz);
-        }
         timeClock.start();
     }//GEN-LAST:event_cTimeZoneScrollActionPerformed
 
     
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
         // TODO add your handling code here:
+ 
+        // get current time and subtract from other time
+        int cTime = Integer.parseInt(currentTime.getText().substring(0,2));
+        int oTime = Integer.parseInt(otherTime.getText().substring(0,2));
+        int ocTime = oTime - cTime;
         
-            
-            // get current time and subtract from other time
-            int cTime = Integer.parseInt(currentTime.getText().substring(0,2));
-            int oTime = Integer.parseInt(otherTime.getText().substring(0,2));
-            int ocTime = oTime - cTime;
-            timeDiff.setText(Integer.toString(ocTime));
-            // display new time as time difference
+        if(tz.toString().equals("Default - GMT")||otz.toString().equals("Default - GMT")){
+            ocTime *= -1;
+        } 
+
+        // display new time as time difference                                                    
+        if(ocTime == 1 || ocTime == -1){
+            timeDiff.setText(Integer.toString(ocTime) + " hour");
+        }
+        else {
+            timeDiff.setText(Integer.toString(ocTime) + " hours");
+        }  
     }//GEN-LAST:event_convertButtonActionPerformed
 
     private void oTimeZoneScrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oTimeZoneScrollActionPerformed
         // TODO add your handling code here:
-  
         otz = oTimeZoneScroll.getSelectedItem();
         
-        String sotz = otz.toString();
-        
-        if(sotz != "Select Time Zone") {
-            showTime2(sotz);
-        }
+        timeClock2.start();
     }//GEN-LAST:event_oTimeZoneScrollActionPerformed
 
     /**
