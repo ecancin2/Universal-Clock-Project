@@ -7,6 +7,17 @@
 /**
  *
  * @author Eric
+ * 
+ * Group Members:
+ * Eric Cancino
+ * Christian Llanas
+ * Rogelio Ramirez
+ * 
+ * Date: 4/27/18
+ * 
+ * Course: CMPE 3341
+ * 
+ * Instructor: Mr. Poveda
  */
 
 import java.awt.event.ActionEvent;
@@ -113,14 +124,14 @@ public class Clock extends javax.swing.JFrame{
         oTimeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         oTimeLabel.setText("Dest. Time");
 
-        cTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver", " " }));
+        cTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver", "" }));
         cTimeZoneScroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTimeZoneScrollActionPerformed(evt);
             }
         });
 
-        oTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver" }));
+        oTimeZoneScroll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time Zone", "Default - GMT", "America/Chicago", "America/New_York", "America/Los_Angeles", "America/Denver", "Asia/Hong_Kong" }));
         oTimeZoneScroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 oTimeZoneScrollActionPerformed(evt);
@@ -271,11 +282,23 @@ public class Clock extends javax.swing.JFrame{
         // get current time and subtract from other time
         int cTime = Integer.parseInt(currentTime.getText().substring(0,2));
         int oTime = Integer.parseInt(otherTime.getText().substring(0,2));
-        int ocTime = oTime - cTime;
+        int ocTime = 0;
         
-        if(tz.toString().equals("Default - GMT")||otz.toString().equals("Default - GMT")){
-            ocTime *= -1;
-        } 
+        if(cTime == 12){
+            ocTime = oTime - 0;
+        }
+        else if(oTime == 12){
+            ocTime = 0 - cTime;
+        }
+        else if(currentTime.getText().substring(6,7).contains("AM") && otherTime.getText().substring(6,7).contains("PM")){
+            ocTime = (oTime - 12) - cTime;
+        }
+        else if(tz.toString().contains("PM") && otz.toString().contains("AM")){
+            ocTime = (12 - cTime) + oTime;
+        }
+        else {
+            ocTime = oTime - cTime;
+        }
 
         // display new time as time difference                                                    
         if(ocTime == 1 || ocTime == -1){
@@ -319,6 +342,9 @@ public class Clock extends javax.swing.JFrame{
             java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        String s="SachinTendulkar";  
+        System.out.println(s.substring(6));//Tendulkar  
+        System.out.println(s.substring(4,6));//Sachin
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
