@@ -53,7 +53,7 @@ public class Clock extends javax.swing.JFrame{
      */
     public Clock() {
         initComponents();
-        SimpleDateFormat time = new SimpleDateFormat("hh:mma z");        
+        SimpleDateFormat time = new SimpleDateFormat("hh:mma z Z");        
         timeClock = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 masterTime = new Date();
@@ -67,7 +67,7 @@ public class Clock extends javax.swing.JFrame{
             }
         });
         
-        SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z");        
+        SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z Z");        
         timeClock2 = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 masterTime2 = new Date();
@@ -282,62 +282,70 @@ public class Clock extends javax.swing.JFrame{
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
       
      
-        try {
+//        try {
+            
+            int cTimeDiff = Integer.parseInt(currentTime.getText().substring(12, 17));
+//            System.out.println(cTimeDiff);
+            int oTimeDiff = Integer.parseInt(otherTime.getText().substring(12, 17));
+            
+            int ocTime = oTimeDiff - cTimeDiff;
+            
+            
             // TODO add your handling code here:
             
-            String CurrentTimes = currentTime.getText(); // get value from the label
-            String OtherTimes = otherTime.getText(); // get value from label 
-            int length = CurrentTimes.length(); /// length of the string
-            
-            char [] ctime = CurrentTimes.toCharArray(); //to get in the form 11:00 PM
-            char [] ctime1 = new char [8] ;
-            
-            char [] otime = OtherTimes.toCharArray();
-            char [] otime1 = new char [8] ;
-            
-     
-            
-            ctime1[0] = ctime[0]; //break up
-            ctime1[1] = ctime[1];
-            ctime1[2] = ctime[2];
-            ctime1[3] = ctime[3];
-            ctime1[4] = ctime[4];
-            ctime1[5] = ' ';
-            ctime1[6] = ctime[5];
-            ctime1[7] = ctime[6];
-            
-            otime1[0] = otime[0];
-            otime1[1] = otime[1];
-            otime1[2] = otime[2];
-            otime1[3] = otime[3];
-            otime1[4] = otime[4];
-            otime1[5] = ' ';
-            otime1[6] = otime[5];
-            otime1[7] = otime[6];
-                                //to here
-            
-            
-            //we are getting the value that was from the array 
-            String CurrentMilitary = String.valueOf(ctime1);
-            String OtherMilitary = String.valueOf(otime1);
-            
-            //System.out.println(CurrentMilitary + " sdf" + OtherMilitary);
-            
-            //convert it here to military
-            SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
-            SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm a");
-            
-            //This is the first miltary time
-            Date date = parseFormat.parse(CurrentMilitary);
-            System.out.println(parseFormat.format(date) + " = " + displayFormat.format(date));
-            
-            
-            //Convert to military time 
-            SimpleDateFormat displayFormat1 = new SimpleDateFormat("HH:mm");
-            SimpleDateFormat parseFormat1 = new SimpleDateFormat("hh:mm a");
-            //Display it again 
-            Date date1 = parseFormat.parse(OtherMilitary);
-            System.out.println(parseFormat.format(date1) + " = " + displayFormat.format(date1));
+//            String CurrentTimes = currentTime.getText(); // get value from the label
+//            String OtherTimes = otherTime.getText(); // get value from label 
+//            int length = CurrentTimes.length(); /// length of the string
+//            
+//            char [] ctime = CurrentTimes.toCharArray(); //to get in the form 11:00 PM
+//            char [] ctime1 = new char [8] ;
+//            
+//            char [] otime = OtherTimes.toCharArray();
+//            char [] otime1 = new char [8] ;
+//            
+//     
+//            
+//            ctime1[0] = ctime[0]; //break up
+//            ctime1[1] = ctime[1];
+//            ctime1[2] = ctime[2];
+//            ctime1[3] = ctime[3];
+//            ctime1[4] = ctime[4];
+//            ctime1[5] = ' ';
+//            ctime1[6] = ctime[5];
+//            ctime1[7] = ctime[6];
+//            
+//            otime1[0] = otime[0];
+//            otime1[1] = otime[1];
+//            otime1[2] = otime[2];
+//            otime1[3] = otime[3];
+//            otime1[4] = otime[4];
+//            otime1[5] = ' ';
+//            otime1[6] = otime[5];
+//            otime1[7] = otime[6];
+//                                //to here
+//            
+//            
+//            //we are getting the value that was from the array 
+//            String CurrentMilitary = String.valueOf(ctime1);
+//            String OtherMilitary = String.valueOf(otime1);
+//            
+//            //System.out.println(CurrentMilitary + " sdf" + OtherMilitary);
+//            
+//            //convert it here to military
+//            SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
+//            SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm a");
+//            
+//            //This is the first miltary time
+//            Date date = parseFormat.parse(CurrentMilitary);
+//            System.out.println(parseFormat.format(date) + " = " + displayFormat.format(date));
+//            
+//            
+//            //Convert to military time 
+//            SimpleDateFormat displayFormat1 = new SimpleDateFormat("HH:mm");
+//            SimpleDateFormat parseFormat1 = new SimpleDateFormat("hh:mm a");
+//            //Display it again 
+//            Date date1 = parseFormat.parse(OtherMilitary);
+//            System.out.println(parseFormat.format(date1) + " = " + displayFormat.format(date1));
             
             /*
             // get current time and subtract from other time
@@ -360,6 +368,7 @@ public class Clock extends javax.swing.JFrame{
             else {
             ocTime = oTime - cTime;
             }
+            */
             
             // display new time as time difference
             if(ocTime == 1 || ocTime == -1){
@@ -368,10 +377,10 @@ public class Clock extends javax.swing.JFrame{
             else {
             timeDiff.setText(Integer.toString(ocTime) + " hours");
             }
-            */
-        } catch (ParseException ex) {
-            Logger.getLogger(Clock.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            
+//        } catch (ParseException ex) {
+//            Logger.getLogger(Clock.class.getName()).log(Level.SEVERE, null, ex);
+//        }
    
         
         
