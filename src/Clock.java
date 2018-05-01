@@ -47,13 +47,14 @@ public class Clock extends javax.swing.JFrame{
     public Timer timeClock2;
     public Date masterTime;
     public Date masterTime2;
-
+    public SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z Z");
+    public SimpleDateFormat time = new SimpleDateFormat("hh:mma z Z");  
     /**
      * Creates new form Clock
      */
     public Clock() {
         initComponents();
-        SimpleDateFormat time = new SimpleDateFormat("hh:mma z Z");        
+             
         timeClock = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 masterTime = new Date();
@@ -62,12 +63,12 @@ public class Clock extends javax.swing.JFrame{
                     currentTime.setText("");
                 }
                 else {
-                    currentTime.setText(time.format(masterTime));
+                    currentTime.setText(time.format(masterTime).substring(0,12));
                 }
             }
         });
         
-        SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z Z");        
+                
         timeClock2 = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 masterTime2 = new Date();
@@ -76,7 +77,7 @@ public class Clock extends javax.swing.JFrame{
                     otherTime.setText("");
                 }
                 else {
-                    otherTime.setText(time2.format(masterTime2));
+                    otherTime.setText(time2.format(masterTime2).substring(0,12));
                 }
             }
         });
@@ -284,11 +285,35 @@ public class Clock extends javax.swing.JFrame{
      
 //        try {
             
-            int cTimeDiff = Integer.parseInt(currentTime.getText().substring(12, 17));
+            int cTimeDiff = Integer.parseInt(time.format(masterTime).substring(12, 17));
 //            System.out.println(cTimeDiff);
-            int oTimeDiff = Integer.parseInt(otherTime.getText().substring(12, 17));
+            int oTimeDiff = Integer.parseInt(time2.format(masterTime2).substring(12, 17));
             
             int ocTime = oTimeDiff - cTimeDiff;
+            String protoTimeString = Integer.toString(ocTime);
+            String finalTimeString;
+            if(ocTime >= 0) {
+                if (ocTime >= 1000) {
+                    finalTimeString = "+" + " " + protoTimeString.substring(0,2);
+                    finalTimeString += ":" + protoTimeString.substring(2,4);
+                }
+                else {
+                    finalTimeString = "+" + " " + protoTimeString.substring(0,1);
+                    finalTimeString += ":" + protoTimeString.substring(1,3);
+                }
+                
+            }
+            else{
+                if (ocTime <= -1000) {
+                    finalTimeString = "-" + " " + protoTimeString.substring(1,3);
+                    finalTimeString += ":" + protoTimeString.substring(3,5);
+                }
+                else {
+                    finalTimeString = "-" + " " + protoTimeString.substring(1,2);
+                    finalTimeString += ":" + protoTimeString.substring(2,4);
+                }
+               
+            }
             
             
             // TODO add your handling code here:
@@ -372,10 +397,10 @@ public class Clock extends javax.swing.JFrame{
             
             // display new time as time difference
             if(ocTime == 1 || ocTime == -1){
-            timeDiff.setText(Integer.toString(ocTime) + " hour");
+            timeDiff.setText(finalTimeString + " hour");
             }
             else {
-            timeDiff.setText(Integer.toString(ocTime) + " hours");
+            timeDiff.setText(finalTimeString + " hours");
             }
             
 //        } catch (ParseException ex) {
