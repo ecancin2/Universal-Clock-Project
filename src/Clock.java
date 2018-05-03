@@ -295,8 +295,16 @@ public class Clock extends javax.swing.JFrame{
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
       
      
-//        try {
+        try {
+             String CTimeCombo = cTimeZoneScroll.getSelectedItem().toString();
+            String OTimeCombo = oTimeZoneScroll.getSelectedItem().toString();;
             
+            if(CTimeCombo.equals("Select Time Zone") ||OTimeCombo.equals("Select Time Zone") ){
+                
+            }
+              
+            else{
+
             int cTimeDiff = Integer.parseInt(timeOffset.format(masterTime));
 //            System.out.println(cTimeDiff);
             int oTimeDiff = Integer.parseInt(timeOffset2.format(masterTime2));
@@ -338,89 +346,7 @@ public class Clock extends javax.swing.JFrame{
                
             }
             
-//            
-//            // TODO add your handling code here:
-//            
-////            String CurrentTimes = currentTime.getText(); // get value from the label
-////            String OtherTimes = otherTime.getText(); // get value from label 
-////            int length = CurrentTimes.length(); /// length of the string
-////            
-////            char [] ctime = CurrentTimes.toCharArray(); //to get in the form 11:00 PM
-////            char [] ctime1 = new char [8] ;
-////            
-////            char [] otime = OtherTimes.toCharArray();
-////            char [] otime1 = new char [8] ;
-////            
-////     
-////            
-////            ctime1[0] = ctime[0]; //break up
-////            ctime1[1] = ctime[1];
-////            ctime1[2] = ctime[2];
-////            ctime1[3] = ctime[3];
-////            ctime1[4] = ctime[4];
-////            ctime1[5] = ' ';
-////            ctime1[6] = ctime[5];
-////            ctime1[7] = ctime[6];
-////            
-////            otime1[0] = otime[0];
-////            otime1[1] = otime[1];
-////            otime1[2] = otime[2];
-////            otime1[3] = otime[3];
-////            otime1[4] = otime[4];
-////            otime1[5] = ' ';
-////            otime1[6] = otime[5];
-////            otime1[7] = otime[6];
-////                                //to here
-////            
-////            
-////            //we are getting the value that was from the array 
-////            String CurrentMilitary = String.valueOf(ctime1);
-////            String OtherMilitary = String.valueOf(otime1);
-////            
-////            //System.out.println(CurrentMilitary + " sdf" + OtherMilitary);
-////            
-////            //convert it here to military
-////            SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
-////            SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm a");
-////            
-////            //This is the first miltary time
-////            Date date = parseFormat.parse(CurrentMilitary);
-////            System.out.println(parseFormat.format(date) + " = " + displayFormat.format(date));
-////            
-////            
-////            //Convert to military time 
-////            SimpleDateFormat displayFormat1 = new SimpleDateFormat("HH:mm");
-////            SimpleDateFormat parseFormat1 = new SimpleDateFormat("hh:mm a");
-////            //Display it again 
-////            Date date1 = parseFormat.parse(OtherMilitary);
-////            System.out.println(parseFormat.format(date1) + " = " + displayFormat.format(date1));
-//            
-//            /*
-//            // get current time and subtract from other time
-//            int cTime = Integer.parseInt(currentTime.getText().substring(0,2));
-//            int oTime = Integer.parseInt(otherTime.getText().substring(0,2));
-//            int ocTime = 0;
-//            
-//            if(cTime == 12){
-//            ocTime = oTime - 0;
-//            }
-//            else if(oTime == 12){
-//            ocTime = 0 - cTime;
-//            }
-//            else if(currentTime.getText().substring(6,7).contains("AM") && otherTime.getText().substring(6,7).contains("PM")){
-//            ocTime = (oTime - 12) - cTime;
-//            }
-//            else if(tz.toString().contains("PM") && otz.toString().contains("AM")){
-//            ocTime = (12 - cTime) + oTime;
-//            }
-//            else {
-//            ocTime = oTime - cTime;
-//            }
-//            */
-//            
-//            // display new time as time difference
-//            try { 
-//          
+     
             if(ocTime == 100 || ocTime == -100){
                 //   timeDiff.setText(protoTimeString + " hour");
                 timeDiff.setText(finalTimeString + " hour");
@@ -430,9 +356,97 @@ public class Clock extends javax.swing.JFrame{
                 timeDiff.setText(finalTimeString + " hours");
             }
             
-//            } catch (Exception e){
+            }
+            
+/*CHRIS START            
+String CurrentTimes = currentTime.getText(); // get value from the label
+String OtherTimes = otherTime.getText(); // get value from label
+int length = CurrentTimes.length(); /// length of the string
+
+char [] ctime = CurrentTimes.toCharArray(); //to get in the form 11:00 PM
+char [] ctime1 = new char [8] ;
+
+char [] otime = OtherTimes.toCharArray();
+char [] otime1 = new char [8] ;
+
+
+
+ctime1[0] = ctime[0]; //break up
+ctime1[1] = ctime[1];
+ctime1[2] = ctime[2];
+ctime1[3] = ctime[3];
+ctime1[4] = ctime[4];
+ctime1[5] = ' ';
+ctime1[6] = ctime[5];
+ctime1[7] = ctime[6];
+
+otime1[0] = otime[0];
+otime1[1] = otime[1];
+otime1[2] = otime[2];
+otime1[3] = otime[3];
+otime1[4] = otime[4];
+otime1[5] = ' ';
+otime1[6] = otime[5];
+otime1[7] = otime[6];
+//to here
+
+
+        //we are getting the value that was from the array
+String CurrentMilitary = String.valueOf(ctime1);
+String OtherMilitary = String.valueOf(otime1);
+////
+// System.out.println(CurrentMilitary + " sdf" + OtherMilitary);
+    //convert it here to military
+SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
+SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm a");
+          //This is the first miltary time
+Date date = parseFormat.parse(CurrentMilitary);
+System.out.println(parseFormat.format(date) + " = " + displayFormat.format(date));
+
+////            //Convert to military time 
+
+            SimpleDateFormat displayFormat1 = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat parseFormat1 = new SimpleDateFormat("hh:mm a");
+////            //Display it again 
+            Date date1 = parseFormat.parse(OtherMilitary);
+            
+            //Get the first military time
+            String time = (displayFormat.format(date));
+            String str1 = time.substring(0,2);
+            String str2 = time.substring(3,5);
+            
+            
+             //Second miltary time           
+            String time2 = (displayFormat.format(date1));
+            String str12 = time2.substring(0,2);
+            String str22 = time2.substring(3,5);
+            
+            
+            //Substract their differences
+            int start = Integer.parseInt(str1) - Integer.parseInt(str12) ;
+             int End = Integer.parseInt(str2) - Integer.parseInt(str22) ;
+
+             
+             //Convert back to string and make it a positive
+          String total =  Integer.toString(Math.abs(start))+ ":"+ Integer.toString(Math.abs(End));
+            //System.out.println(total);
+            
+            //if the first is a zero then its minutes 
+            if(start == 0){
+            timeDiff.setText(total + "Hr");
+            }
+            
+            else{
+                 timeDiff.setText(total + "Min");
+            }
+  CHRIS END   */       
+            
+            
+         
+            
+            } catch (Exception e){
 //                
-//            }
+           }
 //        } catch (ParseException ex) {
 //            Logger.getLogger(Clock.class.getName()).log(Level.SEVERE, null, ex);
 //        }
