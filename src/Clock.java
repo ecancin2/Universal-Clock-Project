@@ -47,10 +47,8 @@ public class Clock extends javax.swing.JFrame{
     public Timer timeClock2;
     public Date masterTime;
     public Date masterTime2;
-    public SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z");
-    public SimpleDateFormat time = new SimpleDateFormat("hh:mma z"); 
-    public SimpleDateFormat timeOffset = new SimpleDateFormat("Z");
-    public SimpleDateFormat timeOffset2 = new SimpleDateFormat("Z");
+    public SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z Z");
+    public SimpleDateFormat time = new SimpleDateFormat("hh:mma z Z");  
     /**
      * Creates new form Clock
      */
@@ -61,12 +59,11 @@ public class Clock extends javax.swing.JFrame{
             public void actionPerformed(ActionEvent e) {
                 masterTime = new Date();
                 time.setTimeZone(TimeZone.getTimeZone(tz.toString()));
-                timeOffset.setTimeZone(TimeZone.getTimeZone(tz.toString()));
                 if(tz.toString().equals("Select Time Zone")){
                     currentTime.setText("");
                 }
                 else {
-                    currentTime.setText(time.format(masterTime));
+                    currentTime.setText(time.format(masterTime).substring(0,12));
                 }
             }
         });
@@ -76,12 +73,11 @@ public class Clock extends javax.swing.JFrame{
             public void actionPerformed(ActionEvent e) {
                 masterTime2 = new Date();
                 time2.setTimeZone(TimeZone.getTimeZone(otz.toString()));
-                timeOffset2.setTimeZone(TimeZone.getTimeZone(otz.toString()));
                 if(otz.toString().equals("Select Time Zone")){
                     otherTime.setText("");
                 }
                 else {
-                    otherTime.setText(time2.format(masterTime2));
+                    otherTime.setText(time2.format(masterTime2).substring(0,12));
                 }
             }
         });
@@ -295,46 +291,38 @@ public class Clock extends javax.swing.JFrame{
      
 //        try {
             
-            int cTimeDiff = Integer.parseInt(timeOffset.format(masterTime));
-//            System.out.println(cTimeDiff);
-            int oTimeDiff = Integer.parseInt(timeOffset2.format(masterTime2));
-            //int cTimeDiff = Integer.parseInt(timeOffset.toString());
-           // int oTimeDiff = Integer.parseInt(timeOffset2.toString());
-            
-            int ocTime = oTimeDiff - cTimeDiff;
-            
-            String protoTimeString = Integer.toString(ocTime);
-            String finalTimeString;
-            
-            
-            
-            System.out.println(timeOffset.format(masterTime));
-            System.out.println(timeOffset2.format(masterTime2));
-            System.out.println(ocTime);
-            
-            if(ocTime >= 0) {
-                if (ocTime >= 1000) {
-                   finalTimeString = "+" + " " + protoTimeString.substring(0,2);
-                    finalTimeString += ":" + protoTimeString.substring(2,4);
-                }
-                else {
-                  finalTimeString = "+" + " " + protoTimeString.substring(0,1);
-                   finalTimeString += ":" + protoTimeString.substring(1,3);
-                }
-                
-            }
-            else{
-                if (ocTime <= -1000) {
-                   finalTimeString = "-" + " " + protoTimeString.substring(1,3);
-                   finalTimeString += ":" + protoTimeString.substring(3,5);
-                }
-                else {
-                  finalTimeString = "-" + " " + protoTimeString.substring(1,2);
-                  finalTimeString += ":" + protoTimeString.substring(2,4);
-                }
-               
-            }
-            
+//            int cTimeDiff = Integer.parseInt(time.format(masterTime).substring(12, 17));
+////            System.out.println(cTimeDiff);
+//        //    int oTimeDiff = Integer.parseInt(time2.format(masterTime2).substring(12, 17));
+//            
+//            int ocTime = oTimeDiff - cTimeDiff;
+//            
+//            String protoTimeString = Integer.toString(ocTime);
+//            String finalTimeString;
+//            
+//            if(ocTime >= 0) {
+//                if (ocTime >= 1000) {
+//                    finalTimeString = "+" + " " + protoTimeString.substring(0,2);
+//                    finalTimeString += ":" + protoTimeString.substring(2,4);
+//                }
+//                else {
+//                    finalTimeString = "+" + " " + protoTimeString.substring(0,1);
+//                    finalTimeString += ":" + protoTimeString.substring(1,3);
+//                }
+//                
+//            }
+//            else{
+//                if (ocTime <= -1000) {
+//                    finalTimeString = "-" + " " + protoTimeString.substring(1,3);
+//                    finalTimeString += ":" + protoTimeString.substring(3,5);
+//                }
+//                else {
+//                    finalTimeString = "-" + " " + protoTimeString.substring(1,2);
+//                    finalTimeString += ":" + protoTimeString.substring(2,4);
+//                }
+//               
+//            }
+//            
 //            
 //            // TODO add your handling code here:
 //            
@@ -418,14 +406,14 @@ public class Clock extends javax.swing.JFrame{
 //            // display new time as time difference
 //            try { 
 //          
-                if(ocTime == 1 || ocTime == -1){
-                 //   timeDiff.setText(protoTimeString + " hour");
-                timeDiff.setText(finalTimeString + " hour");
-                }
-                else {
-                 //   timeDiff.setText(protoTimeString + " hours");
-               timeDiff.setText(finalTimeString + " hours");
-                }
+//                if(ocTime == 1 || ocTime == -1){
+//                    timeDiff.setText(protoTimeString + " hour");
+//               // timeDiff.setText(finalTimeString + " hour");
+//                }
+//                else {
+//                    timeDiff.setText(protoTimeString + " hours");
+//              // timeDiff.setText(finalTimeString + " hours");
+//                }
 //            } catch (Exception e){
 //                
 //            }
