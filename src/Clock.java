@@ -64,6 +64,7 @@ public class Clock extends javax.swing.JFrame{
                 timeOffset.setTimeZone(TimeZone.getTimeZone(tz.toString()));
                 if(tz.toString().equals("Select Time Zone")){
                     currentTime.setText("");
+                    //timeDiff.setText("+ 00:00");
                 }
                 else {
                     currentTime.setText(time.format(masterTime));
@@ -79,6 +80,7 @@ public class Clock extends javax.swing.JFrame{
                 timeOffset2.setTimeZone(TimeZone.getTimeZone(otz.toString()));
                 if(otz.toString().equals("Select Time Zone")){
                     otherTime.setText("");
+                    //timeDiff.setText("+ 00:00");
                 }
                 else {
                     otherTime.setText(time2.format(masterTime2));
@@ -306,11 +308,9 @@ public class Clock extends javax.swing.JFrame{
             String protoTimeString = Integer.toString(ocTime);
             String finalTimeString;
             
-            
-            
-            System.out.println(timeOffset.format(masterTime));
-            System.out.println(timeOffset2.format(masterTime2));
-            System.out.println(ocTime);
+            //System.out.println(timeOffset.format(masterTime));
+            //System.out.println(timeOffset2.format(masterTime2));
+            //System.out.println(ocTime);
             
             if(ocTime >= 0) {
                 if (ocTime >= 1000) {
@@ -323,6 +323,9 @@ public class Clock extends javax.swing.JFrame{
                 }
                 
             }
+            //else if (ocTime == 0){
+                //finalTimeString
+            //}
             else{
                 if (ocTime <= -1000) {
                    finalTimeString = "-" + " " + protoTimeString.substring(1,3);
@@ -418,14 +421,15 @@ public class Clock extends javax.swing.JFrame{
 //            // display new time as time difference
 //            try { 
 //          
-                if(ocTime == 1 || ocTime == -1){
-                 //   timeDiff.setText(protoTimeString + " hour");
+            if(ocTime == 100 || ocTime == -100){
+                //   timeDiff.setText(protoTimeString + " hour");
                 timeDiff.setText(finalTimeString + " hour");
-                }
-                else {
-                 //   timeDiff.setText(protoTimeString + " hours");
-               timeDiff.setText(finalTimeString + " hours");
-                }
+            }
+            else {
+                //   timeDiff.setText(protoTimeString + " hours");
+                timeDiff.setText(finalTimeString + " hours");
+            }
+            
 //            } catch (Exception e){
 //                
 //            }
