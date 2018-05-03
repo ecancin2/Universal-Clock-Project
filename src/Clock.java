@@ -7,19 +7,18 @@
 /**
  *
  * @author Eric
- * 
+ *
  * Group Members:
  * Eric Cancino
  * Christian Llanas
  * Rogelio Ramirez
- * 
+ *
  * Date: 4/27/18
- * 
+ *
  * Course: CMPE 3341
- * 
+ *
  * Instructor: Mr. Poveda
  */
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -35,60 +34,58 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
 
-public class Clock extends javax.swing.JFrame{  
-    
+public class Clock extends javax.swing.JFrame {
+
     //Object used for each selection in the first combo box
     public Object tz;
-    
+
     //Object used for each selection in the second combo box
     public Object otz;
-    
+
     public Timer timeClock;
     public Timer timeClock2;
     public Date masterTime;
     public Date masterTime2;
     public SimpleDateFormat time2 = new SimpleDateFormat("hh:mma z");
-    public SimpleDateFormat time = new SimpleDateFormat("hh:mma z"); 
+    public SimpleDateFormat time = new SimpleDateFormat("hh:mma z");
     public SimpleDateFormat timeOffset = new SimpleDateFormat("Z");
     public SimpleDateFormat timeOffset2 = new SimpleDateFormat("Z");
+
     /**
      * Creates new form Clock
      */
     public Clock() {
         initComponents();
-             
+
         timeClock = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 masterTime = new Date();
                 time.setTimeZone(TimeZone.getTimeZone(tz.toString()));
                 timeOffset.setTimeZone(TimeZone.getTimeZone(tz.toString()));
-                if(tz.toString().equals("Select Time Zone")){
+                if (tz.toString().equals("Select Time Zone")) {
                     currentTime.setText("");
                     //timeDiff.setText("+ 00:00");
-                }
-                else {
+                } else {
                     currentTime.setText(time.format(masterTime));
                 }
             }
         });
-        
-                
+
         timeClock2 = new Timer(100, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 masterTime2 = new Date();
                 time2.setTimeZone(TimeZone.getTimeZone(otz.toString()));
                 timeOffset2.setTimeZone(TimeZone.getTimeZone(otz.toString()));
-                if(otz.toString().equals("Select Time Zone")){
+                if (otz.toString().equals("Select Time Zone")) {
                     otherTime.setText("");
                     //timeDiff.setText("+ 00:00");
-                }
-                else {
+                } else {
                     otherTime.setText(time2.format(masterTime2));
                 }
             }
         });
-        
-        showUTC(); 
+
+        showUTC();
     }
 
     /**
@@ -272,194 +269,86 @@ public class Clock extends javax.swing.JFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
- 
-    void showUTC(){
-        new Timer(100, new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+
+    void showUTC() {
+        new Timer(100, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
                 Date utczone = new Date();
                 SimpleDateFormat time = new SimpleDateFormat("hh:mma");
-                time.setTimeZone(TimeZone.getTimeZone("UTC")); 
+                time.setTimeZone(TimeZone.getTimeZone("UTC"));
                 utcTime.setText(time.format(utczone));
             }
         }).start();
     }
-    
+
     private void cTimeZoneScrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTimeZoneScrollActionPerformed
         // TODO add your handling code here:
         tz = cTimeZoneScroll.getSelectedItem();
-        
+
         timeClock.start();
     }//GEN-LAST:event_cTimeZoneScrollActionPerformed
 
-    
+
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
-      
-     
-        try {
-             String CTimeCombo = cTimeZoneScroll.getSelectedItem().toString();
-            String OTimeCombo = oTimeZoneScroll.getSelectedItem().toString();;
-            
-            if(CTimeCombo.equals("Select Time Zone") ||OTimeCombo.equals("Select Time Zone") ){
-                
-            }
-              
-            else{
+
+        String CTimeCombo = cTimeZoneScroll.getSelectedItem().toString();
+        String OTimeCombo = oTimeZoneScroll.getSelectedItem().toString();;
+
+        if (CTimeCombo.equals("Select Time Zone") || OTimeCombo.equals("Select Time Zone")) {
+            timeDiff.setText("+ 00:00");
+        } else {
 
             int cTimeDiff = Integer.parseInt(timeOffset.format(masterTime));
-//            System.out.println(cTimeDiff);
             int oTimeDiff = Integer.parseInt(timeOffset2.format(masterTime2));
-            //int cTimeDiff = Integer.parseInt(timeOffset.toString());
-           // int oTimeDiff = Integer.parseInt(timeOffset2.toString());
-            
+
             int ocTime = oTimeDiff - cTimeDiff;
-            
+
             String protoTimeString = Integer.toString(ocTime);
             String finalTimeString;
-            
-            //System.out.println(timeOffset.format(masterTime));
-            //System.out.println(timeOffset2.format(masterTime2));
-            //System.out.println(ocTime);
-            
-            if(ocTime >= 0) {
-                if (ocTime >= 1000) {
-                   finalTimeString = "+" + " " + protoTimeString.substring(0,2);
-                    finalTimeString += ":" + protoTimeString.substring(2,4);
+
+            if (ocTime >= 0) {
+
+                if (ocTime == 0) {
+                    finalTimeString = "00:00"
+                } else if (ocTime >= 1000) {
+                    finalTimeString = "+" + " " + protoTimeString.substring(0, 2);
+                    finalTimeString += ":" + protoTimeString.substring(2, 4);
+                } else {
+                    finalTimeString = "+" + " " + protoTimeString.substring(0, 1);
+                    finalTimeString += ":" + protoTimeString.substring(1, 3);
                 }
-                else {
-                  finalTimeString = "+" + " " + protoTimeString.substring(0,1);
-                   finalTimeString += ":" + protoTimeString.substring(1,3);
-                }
-                
-            }
-            //else if (ocTime == 0){
-                //finalTimeString
+
+            } //else if (ocTime == 0){
+            //finalTimeString
             //}
-            else{
+            else {
                 if (ocTime <= -1000) {
-                   finalTimeString = "-" + " " + protoTimeString.substring(1,3);
-                   finalTimeString += ":" + protoTimeString.substring(3,5);
+                    finalTimeString = "-" + " " + protoTimeString.substring(1, 3);
+                    finalTimeString += ":" + protoTimeString.substring(3, 5);
+                } else {
+                    finalTimeString = "-" + " " + protoTimeString.substring(1, 2);
+                    finalTimeString += ":" + protoTimeString.substring(2, 4);
                 }
-                else {
-                  finalTimeString = "-" + " " + protoTimeString.substring(1,2);
-                  finalTimeString += ":" + protoTimeString.substring(2,4);
-                }
-               
+
             }
-            
-     
-            if(ocTime == 100 || ocTime == -100){
+
+            if (ocTime == 100 || ocTime == -100) {
                 //   timeDiff.setText(protoTimeString + " hour");
                 timeDiff.setText(finalTimeString + " hour");
-            }
-            else {
+            } else {
                 //   timeDiff.setText(protoTimeString + " hours");
                 timeDiff.setText(finalTimeString + " hours");
             }
-            
-            }
-            
-/*CHRIS START            
-String CurrentTimes = currentTime.getText(); // get value from the label
-String OtherTimes = otherTime.getText(); // get value from label
-int length = CurrentTimes.length(); /// length of the string
 
-char [] ctime = CurrentTimes.toCharArray(); //to get in the form 11:00 PM
-char [] ctime1 = new char [8] ;
-
-char [] otime = OtherTimes.toCharArray();
-char [] otime1 = new char [8] ;
+        }
 
 
-
-ctime1[0] = ctime[0]; //break up
-ctime1[1] = ctime[1];
-ctime1[2] = ctime[2];
-ctime1[3] = ctime[3];
-ctime1[4] = ctime[4];
-ctime1[5] = ' ';
-ctime1[6] = ctime[5];
-ctime1[7] = ctime[6];
-
-otime1[0] = otime[0];
-otime1[1] = otime[1];
-otime1[2] = otime[2];
-otime1[3] = otime[3];
-otime1[4] = otime[4];
-otime1[5] = ' ';
-otime1[6] = otime[5];
-otime1[7] = otime[6];
-//to here
-
-
-        //we are getting the value that was from the array
-String CurrentMilitary = String.valueOf(ctime1);
-String OtherMilitary = String.valueOf(otime1);
-////
-// System.out.println(CurrentMilitary + " sdf" + OtherMilitary);
-    //convert it here to military
-SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
-SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm a");
-          //This is the first miltary time
-Date date = parseFormat.parse(CurrentMilitary);
-System.out.println(parseFormat.format(date) + " = " + displayFormat.format(date));
-
-////            //Convert to military time 
-
-            SimpleDateFormat displayFormat1 = new SimpleDateFormat("HH:mm");
-            SimpleDateFormat parseFormat1 = new SimpleDateFormat("hh:mm a");
-////            //Display it again 
-            Date date1 = parseFormat.parse(OtherMilitary);
-            
-            //Get the first military time
-            String time = (displayFormat.format(date));
-            String str1 = time.substring(0,2);
-            String str2 = time.substring(3,5);
-            
-            
-             //Second miltary time           
-            String time2 = (displayFormat.format(date1));
-            String str12 = time2.substring(0,2);
-            String str22 = time2.substring(3,5);
-            
-            
-            //Substract their differences
-            int start = Integer.parseInt(str1) - Integer.parseInt(str12) ;
-             int End = Integer.parseInt(str2) - Integer.parseInt(str22) ;
-
-             
-             //Convert back to string and make it a positive
-          String total =  Integer.toString(Math.abs(start))+ ":"+ Integer.toString(Math.abs(End));
-            //System.out.println(total);
-            
-            //if the first is a zero then its minutes 
-            if(start == 0){
-            timeDiff.setText(total + "Hr");
-            }
-            
-            else{
-                 timeDiff.setText(total + "Min");
-            }
-  CHRIS END   */       
-            
-            
-         
-            
-            } catch (Exception e){
-//                
-           }
-//        } catch (ParseException ex) {
-//            Logger.getLogger(Clock.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-   
-        
-        
-        
     }//GEN-LAST:event_convertButtonActionPerformed
 
     private void oTimeZoneScrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oTimeZoneScrollActionPerformed
         // TODO add your handling code here:
         otz = oTimeZoneScroll.getSelectedItem();
-        
+
         timeClock2.start();
     }//GEN-LAST:event_oTimeZoneScrollActionPerformed
 
@@ -489,7 +378,7 @@ System.out.println(parseFormat.format(date) + " = " + displayFormat.format(date)
             java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-      
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
