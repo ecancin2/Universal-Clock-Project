@@ -25,7 +25,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="145" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
@@ -64,32 +64,33 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="83" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="utcLabel" alignment="1" min="-2" pref="81" max="-2" attributes="0"/>
-                                      <Component id="utcTime" alignment="1" min="-2" pref="81" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="convertButton" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="timeDiff" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="utcLabel" alignment="1" min="-2" pref="81" max="-2" attributes="0"/>
+                                          <Component id="utcTime" alignment="1" min="-2" pref="81" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="timeDiff" min="-2" pref="129" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="oTimeZoneScroll" min="-2" max="-2" attributes="0"/>
-                      <Component id="oTimeLabel" pref="135" max="32767" attributes="0"/>
+                      <Component id="oTimeLabel" max="32767" attributes="0"/>
                       <Component id="oTimeZone" alignment="0" max="32767" attributes="0"/>
                       <Component id="otherTime" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
-                  <Component id="convertButton" min="-2" pref="129" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -110,12 +111,18 @@
                       </Group>
                       <Component id="utcTime" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="convertButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="oTimeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cTimeLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="oTimeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cTimeLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="convertButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -174,14 +181,356 @@
         <Component class="javax.swing.JComboBox" name="cTimeZoneScroll">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
+              <StringArray count="349">
                 <StringItem index="0" value="Select Time Zone"/>
                 <StringItem index="1" value="Default - GMT"/>
-                <StringItem index="2" value="America/Chicago"/>
-                <StringItem index="3" value="America/New_York"/>
-                <StringItem index="4" value="America/Los_Angeles"/>
-                <StringItem index="5" value="America/Denver"/>
-                <StringItem index="6" value=""/>
+                <StringItem index="2" value="Africa/Abidjan"/>
+                <StringItem index="3" value="Africa/Accra"/>
+                <StringItem index="4" value="Africa/Algiers"/>
+                <StringItem index="5" value="Africa/Bissau"/>
+                <StringItem index="6" value="Africa/Cairo"/>
+                <StringItem index="7" value="Africa/Casablanca"/>
+                <StringItem index="8" value="Africa/Ceuta"/>
+                <StringItem index="9" value="Africa/El_Aaiun"/>
+                <StringItem index="10" value="Africa/Johannesburg"/>
+                <StringItem index="11" value="Africa/Juba"/>
+                <StringItem index="12" value="Africa/Khartoum"/>
+                <StringItem index="13" value="Africa/Lagos"/>
+                <StringItem index="14" value="Africa/Maputo"/>
+                <StringItem index="15" value="Africa/Monrovia"/>
+                <StringItem index="16" value="Africa/Nairobi"/>
+                <StringItem index="17" value="Africa/Ndjamena"/>
+                <StringItem index="18" value="Africa/Tripoli"/>
+                <StringItem index="19" value="Africa/Tunis"/>
+                <StringItem index="20" value="Africa/Windhoek"/>
+                <StringItem index="21" value="America/Adak"/>
+                <StringItem index="22" value="America/Anchorage"/>
+                <StringItem index="23" value="America/Araguaina"/>
+                <StringItem index="24" value="America/Argentina/Buenos_Aires"/>
+                <StringItem index="25" value="America/Argentina/Catamarca"/>
+                <StringItem index="26" value="America/Argentina/Cordoba"/>
+                <StringItem index="27" value="America/Argentina/Jujuy"/>
+                <StringItem index="28" value="America/Argentina/La_Rioja"/>
+                <StringItem index="29" value="America/Argentina/Mendoza"/>
+                <StringItem index="30" value="America/Argentina/Rio_Gallegos"/>
+                <StringItem index="31" value="America/Argentina/Salta"/>
+                <StringItem index="32" value="America/Argentina/San_Juan"/>
+                <StringItem index="33" value="America/Argentina/San_Luis"/>
+                <StringItem index="34" value="America/Argentina/Tucuman"/>
+                <StringItem index="35" value="America/Argentina/Ushuaia"/>
+                <StringItem index="36" value="America/Asuncion"/>
+                <StringItem index="37" value="America/Atikokan"/>
+                <StringItem index="38" value="America/Bahia"/>
+                <StringItem index="39" value="America/Bahia_Banderas"/>
+                <StringItem index="40" value="America/Barbados"/>
+                <StringItem index="41" value="America/Belem"/>
+                <StringItem index="42" value="America/Belize"/>
+                <StringItem index="43" value="America/Blanc-Sablon"/>
+                <StringItem index="44" value="America/Boa_Vista"/>
+                <StringItem index="45" value="America/Bogota"/>
+                <StringItem index="46" value="America/Boise"/>
+                <StringItem index="47" value="America/Cambridge_Bay"/>
+                <StringItem index="48" value="America/Campo_Grande"/>
+                <StringItem index="49" value="America/Cancun"/>
+                <StringItem index="50" value="America/Caracas"/>
+                <StringItem index="51" value="America/Cayenne"/>
+                <StringItem index="52" value="America/Chicago"/>
+                <StringItem index="53" value="America/Chihuahua"/>
+                <StringItem index="54" value="America/Costa_Rica"/>
+                <StringItem index="55" value="America/Creston"/>
+                <StringItem index="56" value="America/Cuiaba"/>
+                <StringItem index="57" value="America/Curacao"/>
+                <StringItem index="58" value="America/Danmarkshavn"/>
+                <StringItem index="59" value="America/Dawson"/>
+                <StringItem index="60" value="America/Dawson_Creek"/>
+                <StringItem index="61" value="America/Denver"/>
+                <StringItem index="62" value="America/Detroit"/>
+                <StringItem index="63" value="America/Edmonton"/>
+                <StringItem index="64" value="America/Eirunepe"/>
+                <StringItem index="65" value="America/El_Salvador"/>
+                <StringItem index="66" value="America/Fort_Nelson"/>
+                <StringItem index="67" value="America/Fortaleza"/>
+                <StringItem index="68" value="America/Glace_Bay"/>
+                <StringItem index="69" value="America/Godthab"/>
+                <StringItem index="70" value="America/Goose_Bay"/>
+                <StringItem index="71" value="America/Grand_Turk"/>
+                <StringItem index="72" value="America/Guatemala"/>
+                <StringItem index="73" value="America/Guayaquil"/>
+                <StringItem index="74" value="America/Guyana"/>
+                <StringItem index="75" value="America/Halifax"/>
+                <StringItem index="76" value="America/Havana"/>
+                <StringItem index="77" value="America/Hermosillo"/>
+                <StringItem index="78" value="America/Indiana/Indianapolis"/>
+                <StringItem index="79" value="America/Indiana/Knox"/>
+                <StringItem index="80" value="America/Indiana/Marengo"/>
+                <StringItem index="81" value="America/Indiana/Petersburg"/>
+                <StringItem index="82" value="America/Indiana/Tell_City"/>
+                <StringItem index="83" value="America/Indiana/Vevay"/>
+                <StringItem index="84" value="America/Indiana/Vincennes"/>
+                <StringItem index="85" value="America/Indiana/Winamac"/>
+                <StringItem index="86" value="America/Inuvik"/>
+                <StringItem index="87" value="America/Iqaluit"/>
+                <StringItem index="88" value="America/Jamaica"/>
+                <StringItem index="89" value="America/Juneau"/>
+                <StringItem index="90" value="America/Kentucky/Louisville"/>
+                <StringItem index="91" value="America/Kentucky/Monticello"/>
+                <StringItem index="92" value="America/La_Paz"/>
+                <StringItem index="93" value="America/Lima"/>
+                <StringItem index="94" value="America/Los_Angeles"/>
+                <StringItem index="95" value="America/Maceio"/>
+                <StringItem index="96" value="America/Managua"/>
+                <StringItem index="97" value="America/Manaus"/>
+                <StringItem index="98" value="America/Martinique"/>
+                <StringItem index="99" value="America/Matamoros"/>
+                <StringItem index="100" value="America/Mazatlan"/>
+                <StringItem index="101" value="America/Menominee"/>
+                <StringItem index="102" value="America/Merida"/>
+                <StringItem index="103" value="America/Metlakatla"/>
+                <StringItem index="104" value="America/Mexico_City"/>
+                <StringItem index="105" value="America/Miquelon"/>
+                <StringItem index="106" value="America/Moncton"/>
+                <StringItem index="107" value="America/Monterrey"/>
+                <StringItem index="108" value="America/Montevideo"/>
+                <StringItem index="109" value="America/Nassau"/>
+                <StringItem index="110" value="America/New_York"/>
+                <StringItem index="111" value="America/Nipigon"/>
+                <StringItem index="112" value="America/Nome"/>
+                <StringItem index="113" value="America/Noronha"/>
+                <StringItem index="114" value="America/North_Dakota/Beulah"/>
+                <StringItem index="115" value="America/North_Dakota/Center"/>
+                <StringItem index="116" value="America/North_Dakota/New_Salem"/>
+                <StringItem index="117" value="America/Ojinaga"/>
+                <StringItem index="118" value="America/Panama"/>
+                <StringItem index="119" value="America/Pangnirtung"/>
+                <StringItem index="120" value="America/Paramaribo"/>
+                <StringItem index="121" value="America/Phoenix"/>
+                <StringItem index="122" value="America/Port-au-Prince"/>
+                <StringItem index="123" value="America/Port_of_Spain"/>
+                <StringItem index="124" value="America/Porto_Velho"/>
+                <StringItem index="125" value="America/Puerto_Rico"/>
+                <StringItem index="126" value="America/Punta_Arenas"/>
+                <StringItem index="127" value="America/Rainy_River"/>
+                <StringItem index="128" value="America/Rankin_Inlet"/>
+                <StringItem index="129" value="America/Recife"/>
+                <StringItem index="130" value="America/Regina"/>
+                <StringItem index="131" value="America/Resolute"/>
+                <StringItem index="132" value="America/Rio_Branco"/>
+                <StringItem index="133" value="America/Santarem"/>
+                <StringItem index="134" value="America/Santiago"/>
+                <StringItem index="135" value="America/Santo_Domingo"/>
+                <StringItem index="136" value="America/Sao_Paulo"/>
+                <StringItem index="137" value="America/Scoresbysund"/>
+                <StringItem index="138" value="America/Sitka"/>
+                <StringItem index="139" value="America/St_Johns"/>
+                <StringItem index="140" value="America/Swift_Current"/>
+                <StringItem index="141" value="America/Tegucigalpa"/>
+                <StringItem index="142" value="America/Thule"/>
+                <StringItem index="143" value="America/Thunder_Bay"/>
+                <StringItem index="144" value="America/Tijuana"/>
+                <StringItem index="145" value="America/Toronto"/>
+                <StringItem index="146" value="America/Vancouver"/>
+                <StringItem index="147" value="America/Whitehorse"/>
+                <StringItem index="148" value="America/Winnipeg"/>
+                <StringItem index="149" value="America/Yakutat"/>
+                <StringItem index="150" value="America/Yellowknife"/>
+                <StringItem index="151" value="Antarctica/Casey"/>
+                <StringItem index="152" value="Antarctica/Davis"/>
+                <StringItem index="153" value="Antarctica/DumontDUrville"/>
+                <StringItem index="154" value="Antarctica/Macquarie"/>
+                <StringItem index="155" value="Antarctica/Mawson"/>
+                <StringItem index="156" value="Antarctica/Palmer"/>
+                <StringItem index="157" value="Antarctica/Rothera"/>
+                <StringItem index="158" value="Antarctica/Syowa"/>
+                <StringItem index="159" value="Antarctica/Troll"/>
+                <StringItem index="160" value="Antarctica/Vostok"/>
+                <StringItem index="161" value="Asia/Almaty"/>
+                <StringItem index="162" value="Asia/Amman"/>
+                <StringItem index="163" value="Asia/Anadyr"/>
+                <StringItem index="164" value="Asia/Aqtau"/>
+                <StringItem index="165" value="Asia/Aqtobe"/>
+                <StringItem index="166" value="Asia/Ashgabat"/>
+                <StringItem index="167" value="Asia/Atyrau"/>
+                <StringItem index="168" value="Asia/Baghdad"/>
+                <StringItem index="169" value="Asia/Baku"/>
+                <StringItem index="170" value="Asia/Bangkok"/>
+                <StringItem index="171" value="Asia/Barnaul"/>
+                <StringItem index="172" value="Asia/Beirut"/>
+                <StringItem index="173" value="Asia/Bishkek"/>
+                <StringItem index="174" value="Asia/Brunei"/>
+                <StringItem index="175" value="Asia/Chita"/>
+                <StringItem index="176" value="Asia/Choibalsan"/>
+                <StringItem index="177" value="Asia/Colombo"/>
+                <StringItem index="178" value="Asia/Damascus"/>
+                <StringItem index="179" value="Asia/Dhaka"/>
+                <StringItem index="180" value="Asia/Dili"/>
+                <StringItem index="181" value="Asia/Dubai"/>
+                <StringItem index="182" value="Asia/Dushanbe"/>
+                <StringItem index="183" value="Asia/Famagusta"/>
+                <StringItem index="184" value="Asia/Gaza"/>
+                <StringItem index="185" value="Asia/Hebron"/>
+                <StringItem index="186" value="Asia/Ho_Chi_Minh"/>
+                <StringItem index="187" value="Asia/Hong_Kong"/>
+                <StringItem index="188" value="Asia/Hovd"/>
+                <StringItem index="189" value="Asia/Irkutsk"/>
+                <StringItem index="190" value="Asia/Jakarta"/>
+                <StringItem index="191" value="Asia/Jayapura"/>
+                <StringItem index="192" value="Asia/Jerusalem"/>
+                <StringItem index="193" value="Asia/Kabul"/>
+                <StringItem index="194" value="Asia/Kamchatka"/>
+                <StringItem index="195" value="Asia/Karachi"/>
+                <StringItem index="196" value="Asia/Kathmandu"/>
+                <StringItem index="197" value="Asia/Khandyga"/>
+                <StringItem index="198" value="Asia/Kolkata"/>
+                <StringItem index="199" value="Asia/Krasnoyarsk"/>
+                <StringItem index="200" value="Asia/Kuala_Lumpur"/>
+                <StringItem index="201" value="Asia/Kuching"/>
+                <StringItem index="202" value="Asia/Macau"/>
+                <StringItem index="203" value="Asia/Magadan"/>
+                <StringItem index="204" value="Asia/Makassar"/>
+                <StringItem index="205" value="Asia/Manila"/>
+                <StringItem index="206" value="Asia/Nicosia"/>
+                <StringItem index="207" value="Asia/Novokuznetsk"/>
+                <StringItem index="208" value="Asia/Novosibirsk"/>
+                <StringItem index="209" value="Asia/Omsk"/>
+                <StringItem index="210" value="Asia/Oral"/>
+                <StringItem index="211" value="Asia/Pontianak"/>
+                <StringItem index="212" value="Asia/Pyongyang"/>
+                <StringItem index="213" value="Asia/Qatar"/>
+                <StringItem index="214" value="Asia/Qyzylorda"/>
+                <StringItem index="215" value="Asia/Riyadh"/>
+                <StringItem index="216" value="Asia/Sakhalin"/>
+                <StringItem index="217" value="Asia/Samarkand"/>
+                <StringItem index="218" value="Asia/Seoul"/>
+                <StringItem index="219" value="Asia/Shanghai"/>
+                <StringItem index="220" value="Asia/Singapore"/>
+                <StringItem index="221" value="Asia/Srednekolymsk"/>
+                <StringItem index="222" value="Asia/Taipei"/>
+                <StringItem index="223" value="Asia/Tashkent"/>
+                <StringItem index="224" value="Asia/Tbilisi"/>
+                <StringItem index="225" value="Asia/Tehran"/>
+                <StringItem index="226" value="Asia/Thimphu"/>
+                <StringItem index="227" value="Asia/Tokyo"/>
+                <StringItem index="228" value="Asia/Tomsk"/>
+                <StringItem index="229" value="Asia/Ulaanbaatar"/>
+                <StringItem index="230" value="Asia/Urumqi"/>
+                <StringItem index="231" value="Asia/Ust-Nera"/>
+                <StringItem index="232" value="Asia/Vladivostok"/>
+                <StringItem index="233" value="Asia/Yakutsk"/>
+                <StringItem index="234" value="Asia/Yangon"/>
+                <StringItem index="235" value="Asia/Yekaterinburg"/>
+                <StringItem index="236" value="Asia/Yerevan"/>
+                <StringItem index="237" value="Atlantic/Azores"/>
+                <StringItem index="238" value="Atlantic/Bermuda"/>
+                <StringItem index="239" value="Atlantic/Canary"/>
+                <StringItem index="240" value="Atlantic/Cape_Verde"/>
+                <StringItem index="241" value="Atlantic/Faroe"/>
+                <StringItem index="242" value="Atlantic/Madeira"/>
+                <StringItem index="243" value="Atlantic/Reykjavik"/>
+                <StringItem index="244" value="Atlantic/South_Georgia"/>
+                <StringItem index="245" value="Atlantic/Stanley"/>
+                <StringItem index="246" value="Australia/Adelaide"/>
+                <StringItem index="247" value="Australia/Brisbane"/>
+                <StringItem index="248" value="Australia/Broken_Hill"/>
+                <StringItem index="249" value="Australia/Currie"/>
+                <StringItem index="250" value="Australia/Darwin"/>
+                <StringItem index="251" value="Australia/Eucla"/>
+                <StringItem index="252" value="Australia/Hobart"/>
+                <StringItem index="253" value="Australia/Lindeman"/>
+                <StringItem index="254" value="Australia/Lord_Howe"/>
+                <StringItem index="255" value="Australia/Melbourne"/>
+                <StringItem index="256" value="Australia/Perth"/>
+                <StringItem index="257" value="Australia/Sydney"/>
+                <StringItem index="258" value="Europe/Amsterdam"/>
+                <StringItem index="259" value="Europe/Andorra"/>
+                <StringItem index="260" value="Europe/Astrakhan"/>
+                <StringItem index="261" value="Europe/Athens"/>
+                <StringItem index="262" value="Europe/Belgrade"/>
+                <StringItem index="263" value="Europe/Berlin"/>
+                <StringItem index="264" value="Europe/Brussels"/>
+                <StringItem index="265" value="Europe/Bucharest"/>
+                <StringItem index="266" value="Europe/Budapest"/>
+                <StringItem index="267" value="Europe/Chisinau"/>
+                <StringItem index="268" value="Europe/Copenhagen"/>
+                <StringItem index="269" value="Europe/Dublin"/>
+                <StringItem index="270" value="Europe/Gibraltar"/>
+                <StringItem index="271" value="Europe/Helsinki"/>
+                <StringItem index="272" value="Europe/Istanbul"/>
+                <StringItem index="273" value="Europe/Kaliningrad"/>
+                <StringItem index="274" value="Europe/Kiev"/>
+                <StringItem index="275" value="Europe/Kirov"/>
+                <StringItem index="276" value="Europe/Lisbon"/>
+                <StringItem index="277" value="Europe/London"/>
+                <StringItem index="278" value="Europe/Luxembourg"/>
+                <StringItem index="279" value="Europe/Madrid"/>
+                <StringItem index="280" value="Europe/Malta"/>
+                <StringItem index="281" value="Europe/Minsk"/>
+                <StringItem index="282" value="Europe/Monaco"/>
+                <StringItem index="283" value="Europe/Moscow"/>
+                <StringItem index="284" value="Europe/Oslo"/>
+                <StringItem index="285" value="Europe/Paris"/>
+                <StringItem index="286" value="Europe/Prague"/>
+                <StringItem index="287" value="Europe/Riga"/>
+                <StringItem index="288" value="Europe/Rome"/>
+                <StringItem index="289" value="Europe/Samara"/>
+                <StringItem index="290" value="Europe/Saratov"/>
+                <StringItem index="291" value="Europe/Simferopol"/>
+                <StringItem index="292" value="Europe/Sofia"/>
+                <StringItem index="293" value="Europe/Stockholm"/>
+                <StringItem index="294" value="Europe/Tallinn"/>
+                <StringItem index="295" value="Europe/Tirane"/>
+                <StringItem index="296" value="Europe/Ulyanovsk"/>
+                <StringItem index="297" value="Europe/Uzhgorod"/>
+                <StringItem index="298" value="Europe/Vienna"/>
+                <StringItem index="299" value="Europe/Vilnius"/>
+                <StringItem index="300" value="Europe/Volgograd"/>
+                <StringItem index="301" value="Europe/Warsaw"/>
+                <StringItem index="302" value="Europe/Zaporozhye"/>
+                <StringItem index="303" value="Europe/Zurich"/>
+                <StringItem index="304" value="Indian/Chagos"/>
+                <StringItem index="305" value="Indian/Christmas"/>
+                <StringItem index="306" value="Indian/Cocos"/>
+                <StringItem index="307" value="Indian/Kerguelen"/>
+                <StringItem index="308" value="Indian/Mahe"/>
+                <StringItem index="309" value="Indian/Maldives"/>
+                <StringItem index="310" value="Indian/Mauritius"/>
+                <StringItem index="311" value="Indian/Reunion"/>
+                <StringItem index="312" value="Pacific/Apia"/>
+                <StringItem index="313" value="Pacific/Auckland"/>
+                <StringItem index="314" value="Pacific/Bougainville"/>
+                <StringItem index="315" value="Pacific/Chatham"/>
+                <StringItem index="316" value="Pacific/Chuuk"/>
+                <StringItem index="317" value="Pacific/Easter"/>
+                <StringItem index="318" value="Pacific/Efate"/>
+                <StringItem index="319" value="Pacific/Enderbury"/>
+                <StringItem index="320" value="Pacific/Fakaofo"/>
+                <StringItem index="321" value="Pacific/Fiji"/>
+                <StringItem index="322" value="Pacific/Funafuti"/>
+                <StringItem index="323" value="Pacific/Galapagos"/>
+                <StringItem index="324" value="Pacific/Gambier"/>
+                <StringItem index="325" value="Pacific/Guadalcanal"/>
+                <StringItem index="326" value="Pacific/Guam"/>
+                <StringItem index="327" value="Pacific/Honolulu"/>
+                <StringItem index="328" value="Pacific/Kiritimati"/>
+                <StringItem index="329" value="Pacific/Kosrae"/>
+                <StringItem index="330" value="Pacific/Kwajalein"/>
+                <StringItem index="331" value="Pacific/Majuro"/>
+                <StringItem index="332" value="Pacific/Marquesas"/>
+                <StringItem index="333" value="Pacific/Nauru"/>
+                <StringItem index="334" value="Pacific/Niue"/>
+                <StringItem index="335" value="Pacific/Norfolk"/>
+                <StringItem index="336" value="Pacific/Noumea"/>
+                <StringItem index="337" value="Pacific/Pago_Pago"/>
+                <StringItem index="338" value="Pacific/Palau"/>
+                <StringItem index="339" value="Pacific/Pitcairn"/>
+                <StringItem index="340" value="Pacific/Pohnpei"/>
+                <StringItem index="341" value="Pacific/Port_Moresby"/>
+                <StringItem index="342" value="Pacific/Rarotonga"/>
+                <StringItem index="343" value="Pacific/Tahiti"/>
+                <StringItem index="344" value="Pacific/Tarawa"/>
+                <StringItem index="345" value="Pacific/Tongatapu"/>
+                <StringItem index="346" value="Pacific/Wake"/>
+                <StringItem index="347" value="Pacific/Wallis"/>
+                <StringItem index="348" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -195,14 +544,355 @@
         <Component class="javax.swing.JComboBox" name="oTimeZoneScroll">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
+              <StringArray count="348">
                 <StringItem index="0" value="Select Time Zone"/>
                 <StringItem index="1" value="Default - GMT"/>
-                <StringItem index="2" value="America/Chicago"/>
-                <StringItem index="3" value="America/New_York"/>
-                <StringItem index="4" value="America/Los_Angeles"/>
-                <StringItem index="5" value="America/Denver"/>
-                <StringItem index="6" value="Asia/Hong_Kong"/>
+                <StringItem index="2" value="Africa/Abidjan"/>
+                <StringItem index="3" value="Africa/Accra"/>
+                <StringItem index="4" value="Africa/Algiers"/>
+                <StringItem index="5" value="Africa/Bissau"/>
+                <StringItem index="6" value="Africa/Cairo"/>
+                <StringItem index="7" value="Africa/Casablanca"/>
+                <StringItem index="8" value="Africa/Ceuta"/>
+                <StringItem index="9" value="Africa/El_Aaiun"/>
+                <StringItem index="10" value="Africa/Johannesburg"/>
+                <StringItem index="11" value="Africa/Juba"/>
+                <StringItem index="12" value="Africa/Khartoum"/>
+                <StringItem index="13" value="Africa/Lagos"/>
+                <StringItem index="14" value="Africa/Maputo"/>
+                <StringItem index="15" value="Africa/Monrovia"/>
+                <StringItem index="16" value="Africa/Nairobi"/>
+                <StringItem index="17" value="Africa/Ndjamena"/>
+                <StringItem index="18" value="Africa/Tripoli"/>
+                <StringItem index="19" value="Africa/Tunis"/>
+                <StringItem index="20" value="Africa/Windhoek"/>
+                <StringItem index="21" value="America/Adak"/>
+                <StringItem index="22" value="America/Anchorage"/>
+                <StringItem index="23" value="America/Araguaina"/>
+                <StringItem index="24" value="America/Argentina/Buenos_Aires"/>
+                <StringItem index="25" value="America/Argentina/Catamarca"/>
+                <StringItem index="26" value="America/Argentina/Cordoba"/>
+                <StringItem index="27" value="America/Argentina/Jujuy"/>
+                <StringItem index="28" value="America/Argentina/La_Rioja"/>
+                <StringItem index="29" value="America/Argentina/Mendoza"/>
+                <StringItem index="30" value="America/Argentina/Rio_Gallegos"/>
+                <StringItem index="31" value="America/Argentina/Salta"/>
+                <StringItem index="32" value="America/Argentina/San_Juan"/>
+                <StringItem index="33" value="America/Argentina/San_Luis"/>
+                <StringItem index="34" value="America/Argentina/Tucuman"/>
+                <StringItem index="35" value="America/Argentina/Ushuaia"/>
+                <StringItem index="36" value="America/Asuncion"/>
+                <StringItem index="37" value="America/Atikokan"/>
+                <StringItem index="38" value="America/Bahia"/>
+                <StringItem index="39" value="America/Bahia_Banderas"/>
+                <StringItem index="40" value="America/Barbados"/>
+                <StringItem index="41" value="America/Belem"/>
+                <StringItem index="42" value="America/Belize"/>
+                <StringItem index="43" value="America/Blanc-Sablon"/>
+                <StringItem index="44" value="America/Boa_Vista"/>
+                <StringItem index="45" value="America/Bogota"/>
+                <StringItem index="46" value="America/Boise"/>
+                <StringItem index="47" value="America/Cambridge_Bay"/>
+                <StringItem index="48" value="America/Campo_Grande"/>
+                <StringItem index="49" value="America/Cancun"/>
+                <StringItem index="50" value="America/Caracas"/>
+                <StringItem index="51" value="America/Cayenne"/>
+                <StringItem index="52" value="America/Chicago"/>
+                <StringItem index="53" value="America/Chihuahua"/>
+                <StringItem index="54" value="America/Costa_Rica"/>
+                <StringItem index="55" value="America/Creston"/>
+                <StringItem index="56" value="America/Cuiaba"/>
+                <StringItem index="57" value="America/Curacao"/>
+                <StringItem index="58" value="America/Danmarkshavn"/>
+                <StringItem index="59" value="America/Dawson"/>
+                <StringItem index="60" value="America/Dawson_Creek"/>
+                <StringItem index="61" value="America/Denver"/>
+                <StringItem index="62" value="America/Detroit"/>
+                <StringItem index="63" value="America/Edmonton"/>
+                <StringItem index="64" value="America/Eirunepe"/>
+                <StringItem index="65" value="America/El_Salvador"/>
+                <StringItem index="66" value="America/Fort_Nelson"/>
+                <StringItem index="67" value="America/Fortaleza"/>
+                <StringItem index="68" value="America/Glace_Bay"/>
+                <StringItem index="69" value="America/Godthab"/>
+                <StringItem index="70" value="America/Goose_Bay"/>
+                <StringItem index="71" value="America/Grand_Turk"/>
+                <StringItem index="72" value="America/Guatemala"/>
+                <StringItem index="73" value="America/Guayaquil"/>
+                <StringItem index="74" value="America/Guyana"/>
+                <StringItem index="75" value="America/Halifax"/>
+                <StringItem index="76" value="America/Havana"/>
+                <StringItem index="77" value="America/Hermosillo"/>
+                <StringItem index="78" value="America/Indiana/Indianapolis"/>
+                <StringItem index="79" value="America/Indiana/Knox"/>
+                <StringItem index="80" value="America/Indiana/Marengo"/>
+                <StringItem index="81" value="America/Indiana/Petersburg"/>
+                <StringItem index="82" value="America/Indiana/Tell_City"/>
+                <StringItem index="83" value="America/Indiana/Vevay"/>
+                <StringItem index="84" value="America/Indiana/Vincennes"/>
+                <StringItem index="85" value="America/Indiana/Winamac"/>
+                <StringItem index="86" value="America/Inuvik"/>
+                <StringItem index="87" value="America/Iqaluit"/>
+                <StringItem index="88" value="America/Jamaica"/>
+                <StringItem index="89" value="America/Juneau"/>
+                <StringItem index="90" value="America/Kentucky/Louisville"/>
+                <StringItem index="91" value="America/Kentucky/Monticello"/>
+                <StringItem index="92" value="America/La_Paz"/>
+                <StringItem index="93" value="America/Lima"/>
+                <StringItem index="94" value="America/Los_Angeles"/>
+                <StringItem index="95" value="America/Maceio"/>
+                <StringItem index="96" value="America/Managua"/>
+                <StringItem index="97" value="America/Manaus"/>
+                <StringItem index="98" value="America/Martinique"/>
+                <StringItem index="99" value="America/Matamoros"/>
+                <StringItem index="100" value="America/Mazatlan"/>
+                <StringItem index="101" value="America/Menominee"/>
+                <StringItem index="102" value="America/Merida"/>
+                <StringItem index="103" value="America/Metlakatla"/>
+                <StringItem index="104" value="America/Mexico_City"/>
+                <StringItem index="105" value="America/Miquelon"/>
+                <StringItem index="106" value="America/Moncton"/>
+                <StringItem index="107" value="America/Monterrey"/>
+                <StringItem index="108" value="America/Montevideo"/>
+                <StringItem index="109" value="America/Nassau"/>
+                <StringItem index="110" value="America/New_York"/>
+                <StringItem index="111" value="America/Nipigon"/>
+                <StringItem index="112" value="America/Nome"/>
+                <StringItem index="113" value="America/Noronha"/>
+                <StringItem index="114" value="America/North_Dakota/Beulah"/>
+                <StringItem index="115" value="America/North_Dakota/Center"/>
+                <StringItem index="116" value="America/North_Dakota/New_Salem"/>
+                <StringItem index="117" value="America/Ojinaga"/>
+                <StringItem index="118" value="America/Panama"/>
+                <StringItem index="119" value="America/Pangnirtung"/>
+                <StringItem index="120" value="America/Paramaribo"/>
+                <StringItem index="121" value="America/Phoenix"/>
+                <StringItem index="122" value="America/Port-au-Prince"/>
+                <StringItem index="123" value="America/Port_of_Spain"/>
+                <StringItem index="124" value="America/Porto_Velho"/>
+                <StringItem index="125" value="America/Puerto_Rico"/>
+                <StringItem index="126" value="America/Punta_Arenas"/>
+                <StringItem index="127" value="America/Rainy_River"/>
+                <StringItem index="128" value="America/Rankin_Inlet"/>
+                <StringItem index="129" value="America/Recife"/>
+                <StringItem index="130" value="America/Regina"/>
+                <StringItem index="131" value="America/Resolute"/>
+                <StringItem index="132" value="America/Rio_Branco"/>
+                <StringItem index="133" value="America/Santarem"/>
+                <StringItem index="134" value="America/Santiago"/>
+                <StringItem index="135" value="America/Santo_Domingo"/>
+                <StringItem index="136" value="America/Sao_Paulo"/>
+                <StringItem index="137" value="America/Scoresbysund"/>
+                <StringItem index="138" value="America/Sitka"/>
+                <StringItem index="139" value="America/St_Johns"/>
+                <StringItem index="140" value="America/Swift_Current"/>
+                <StringItem index="141" value="America/Tegucigalpa"/>
+                <StringItem index="142" value="America/Thule"/>
+                <StringItem index="143" value="America/Thunder_Bay"/>
+                <StringItem index="144" value="America/Tijuana"/>
+                <StringItem index="145" value="America/Toronto"/>
+                <StringItem index="146" value="America/Vancouver"/>
+                <StringItem index="147" value="America/Whitehorse"/>
+                <StringItem index="148" value="America/Winnipeg"/>
+                <StringItem index="149" value="America/Yakutat"/>
+                <StringItem index="150" value="America/Yellowknife"/>
+                <StringItem index="151" value="Antarctica/Casey"/>
+                <StringItem index="152" value="Antarctica/Davis"/>
+                <StringItem index="153" value="Antarctica/DumontDUrville"/>
+                <StringItem index="154" value="Antarctica/Macquarie"/>
+                <StringItem index="155" value="Antarctica/Mawson"/>
+                <StringItem index="156" value="Antarctica/Palmer"/>
+                <StringItem index="157" value="Antarctica/Rothera"/>
+                <StringItem index="158" value="Antarctica/Syowa"/>
+                <StringItem index="159" value="Antarctica/Troll"/>
+                <StringItem index="160" value="Antarctica/Vostok"/>
+                <StringItem index="161" value="Asia/Almaty"/>
+                <StringItem index="162" value="Asia/Amman"/>
+                <StringItem index="163" value="Asia/Anadyr"/>
+                <StringItem index="164" value="Asia/Aqtau"/>
+                <StringItem index="165" value="Asia/Aqtobe"/>
+                <StringItem index="166" value="Asia/Ashgabat"/>
+                <StringItem index="167" value="Asia/Atyrau"/>
+                <StringItem index="168" value="Asia/Baghdad"/>
+                <StringItem index="169" value="Asia/Baku"/>
+                <StringItem index="170" value="Asia/Bangkok"/>
+                <StringItem index="171" value="Asia/Barnaul"/>
+                <StringItem index="172" value="Asia/Beirut"/>
+                <StringItem index="173" value="Asia/Bishkek"/>
+                <StringItem index="174" value="Asia/Brunei"/>
+                <StringItem index="175" value="Asia/Chita"/>
+                <StringItem index="176" value="Asia/Choibalsan"/>
+                <StringItem index="177" value="Asia/Colombo"/>
+                <StringItem index="178" value="Asia/Damascus"/>
+                <StringItem index="179" value="Asia/Dhaka"/>
+                <StringItem index="180" value="Asia/Dili"/>
+                <StringItem index="181" value="Asia/Dubai"/>
+                <StringItem index="182" value="Asia/Dushanbe"/>
+                <StringItem index="183" value="Asia/Famagusta"/>
+                <StringItem index="184" value="Asia/Gaza"/>
+                <StringItem index="185" value="Asia/Hebron"/>
+                <StringItem index="186" value="Asia/Ho_Chi_Minh"/>
+                <StringItem index="187" value="Asia/Hong_Kong"/>
+                <StringItem index="188" value="Asia/Hovd"/>
+                <StringItem index="189" value="Asia/Irkutsk"/>
+                <StringItem index="190" value="Asia/Jakarta"/>
+                <StringItem index="191" value="Asia/Jayapura"/>
+                <StringItem index="192" value="Asia/Jerusalem"/>
+                <StringItem index="193" value="Asia/Kabul"/>
+                <StringItem index="194" value="Asia/Kamchatka"/>
+                <StringItem index="195" value="Asia/Karachi"/>
+                <StringItem index="196" value="Asia/Kathmandu"/>
+                <StringItem index="197" value="Asia/Khandyga"/>
+                <StringItem index="198" value="Asia/Kolkata"/>
+                <StringItem index="199" value="Asia/Krasnoyarsk"/>
+                <StringItem index="200" value="Asia/Kuala_Lumpur"/>
+                <StringItem index="201" value="Asia/Kuching"/>
+                <StringItem index="202" value="Asia/Macau"/>
+                <StringItem index="203" value="Asia/Magadan"/>
+                <StringItem index="204" value="Asia/Makassar"/>
+                <StringItem index="205" value="Asia/Manila"/>
+                <StringItem index="206" value="Asia/Nicosia"/>
+                <StringItem index="207" value="Asia/Novokuznetsk"/>
+                <StringItem index="208" value="Asia/Novosibirsk"/>
+                <StringItem index="209" value="Asia/Omsk"/>
+                <StringItem index="210" value="Asia/Oral"/>
+                <StringItem index="211" value="Asia/Pontianak"/>
+                <StringItem index="212" value="Asia/Pyongyang"/>
+                <StringItem index="213" value="Asia/Qatar"/>
+                <StringItem index="214" value="Asia/Qyzylorda"/>
+                <StringItem index="215" value="Asia/Riyadh"/>
+                <StringItem index="216" value="Asia/Sakhalin"/>
+                <StringItem index="217" value="Asia/Samarkand"/>
+                <StringItem index="218" value="Asia/Seoul"/>
+                <StringItem index="219" value="Asia/Shanghai"/>
+                <StringItem index="220" value="Asia/Singapore"/>
+                <StringItem index="221" value="Asia/Srednekolymsk"/>
+                <StringItem index="222" value="Asia/Taipei"/>
+                <StringItem index="223" value="Asia/Tashkent"/>
+                <StringItem index="224" value="Asia/Tbilisi"/>
+                <StringItem index="225" value="Asia/Tehran"/>
+                <StringItem index="226" value="Asia/Thimphu"/>
+                <StringItem index="227" value="Asia/Tokyo"/>
+                <StringItem index="228" value="Asia/Tomsk"/>
+                <StringItem index="229" value="Asia/Ulaanbaatar"/>
+                <StringItem index="230" value="Asia/Urumqi"/>
+                <StringItem index="231" value="Asia/Ust-Nera"/>
+                <StringItem index="232" value="Asia/Vladivostok"/>
+                <StringItem index="233" value="Asia/Yakutsk"/>
+                <StringItem index="234" value="Asia/Yangon"/>
+                <StringItem index="235" value="Asia/Yekaterinburg"/>
+                <StringItem index="236" value="Asia/Yerevan"/>
+                <StringItem index="237" value="Atlantic/Azores"/>
+                <StringItem index="238" value="Atlantic/Bermuda"/>
+                <StringItem index="239" value="Atlantic/Canary"/>
+                <StringItem index="240" value="Atlantic/Cape_Verde"/>
+                <StringItem index="241" value="Atlantic/Faroe"/>
+                <StringItem index="242" value="Atlantic/Madeira"/>
+                <StringItem index="243" value="Atlantic/Reykjavik"/>
+                <StringItem index="244" value="Atlantic/South_Georgia"/>
+                <StringItem index="245" value="Atlantic/Stanley"/>
+                <StringItem index="246" value="Australia/Adelaide"/>
+                <StringItem index="247" value="Australia/Brisbane"/>
+                <StringItem index="248" value="Australia/Broken_Hill"/>
+                <StringItem index="249" value="Australia/Currie"/>
+                <StringItem index="250" value="Australia/Darwin"/>
+                <StringItem index="251" value="Australia/Eucla"/>
+                <StringItem index="252" value="Australia/Hobart"/>
+                <StringItem index="253" value="Australia/Lindeman"/>
+                <StringItem index="254" value="Australia/Lord_Howe"/>
+                <StringItem index="255" value="Australia/Melbourne"/>
+                <StringItem index="256" value="Australia/Perth"/>
+                <StringItem index="257" value="Australia/Sydney"/>
+                <StringItem index="258" value="Europe/Amsterdam"/>
+                <StringItem index="259" value="Europe/Andorra"/>
+                <StringItem index="260" value="Europe/Astrakhan"/>
+                <StringItem index="261" value="Europe/Athens"/>
+                <StringItem index="262" value="Europe/Belgrade"/>
+                <StringItem index="263" value="Europe/Berlin"/>
+                <StringItem index="264" value="Europe/Brussels"/>
+                <StringItem index="265" value="Europe/Bucharest"/>
+                <StringItem index="266" value="Europe/Budapest"/>
+                <StringItem index="267" value="Europe/Chisinau"/>
+                <StringItem index="268" value="Europe/Copenhagen"/>
+                <StringItem index="269" value="Europe/Dublin"/>
+                <StringItem index="270" value="Europe/Gibraltar"/>
+                <StringItem index="271" value="Europe/Helsinki"/>
+                <StringItem index="272" value="Europe/Istanbul"/>
+                <StringItem index="273" value="Europe/Kaliningrad"/>
+                <StringItem index="274" value="Europe/Kiev"/>
+                <StringItem index="275" value="Europe/Kirov"/>
+                <StringItem index="276" value="Europe/Lisbon"/>
+                <StringItem index="277" value="Europe/London"/>
+                <StringItem index="278" value="Europe/Luxembourg"/>
+                <StringItem index="279" value="Europe/Madrid"/>
+                <StringItem index="280" value="Europe/Malta"/>
+                <StringItem index="281" value="Europe/Minsk"/>
+                <StringItem index="282" value="Europe/Monaco"/>
+                <StringItem index="283" value="Europe/Moscow"/>
+                <StringItem index="284" value="Europe/Oslo"/>
+                <StringItem index="285" value="Europe/Paris"/>
+                <StringItem index="286" value="Europe/Prague"/>
+                <StringItem index="287" value="Europe/Riga"/>
+                <StringItem index="288" value="Europe/Rome"/>
+                <StringItem index="289" value="Europe/Samara"/>
+                <StringItem index="290" value="Europe/Saratov"/>
+                <StringItem index="291" value="Europe/Simferopol"/>
+                <StringItem index="292" value="Europe/Sofia"/>
+                <StringItem index="293" value="Europe/Stockholm"/>
+                <StringItem index="294" value="Europe/Tallinn"/>
+                <StringItem index="295" value="Europe/Tirane"/>
+                <StringItem index="296" value="Europe/Ulyanovsk"/>
+                <StringItem index="297" value="Europe/Uzhgorod"/>
+                <StringItem index="298" value="Europe/Vienna"/>
+                <StringItem index="299" value="Europe/Vilnius"/>
+                <StringItem index="300" value="Europe/Volgograd"/>
+                <StringItem index="301" value="Europe/Warsaw"/>
+                <StringItem index="302" value="Europe/Zaporozhye"/>
+                <StringItem index="303" value="Europe/Zurich"/>
+                <StringItem index="304" value="Indian/Chagos"/>
+                <StringItem index="305" value="Indian/Christmas"/>
+                <StringItem index="306" value="Indian/Cocos"/>
+                <StringItem index="307" value="Indian/Kerguelen"/>
+                <StringItem index="308" value="Indian/Mahe"/>
+                <StringItem index="309" value="Indian/Maldives"/>
+                <StringItem index="310" value="Indian/Mauritius"/>
+                <StringItem index="311" value="Indian/Reunion"/>
+                <StringItem index="312" value="Pacific/Apia"/>
+                <StringItem index="313" value="Pacific/Auckland"/>
+                <StringItem index="314" value="Pacific/Bougainville"/>
+                <StringItem index="315" value="Pacific/Chatham"/>
+                <StringItem index="316" value="Pacific/Chuuk"/>
+                <StringItem index="317" value="Pacific/Easter"/>
+                <StringItem index="318" value="Pacific/Efate"/>
+                <StringItem index="319" value="Pacific/Enderbury"/>
+                <StringItem index="320" value="Pacific/Fakaofo"/>
+                <StringItem index="321" value="Pacific/Fiji"/>
+                <StringItem index="322" value="Pacific/Funafuti"/>
+                <StringItem index="323" value="Pacific/Galapagos"/>
+                <StringItem index="324" value="Pacific/Gambier"/>
+                <StringItem index="325" value="Pacific/Guadalcanal"/>
+                <StringItem index="326" value="Pacific/Guam"/>
+                <StringItem index="327" value="Pacific/Honolulu"/>
+                <StringItem index="328" value="Pacific/Kiritimati"/>
+                <StringItem index="329" value="Pacific/Kosrae"/>
+                <StringItem index="330" value="Pacific/Kwajalein"/>
+                <StringItem index="331" value="Pacific/Majuro"/>
+                <StringItem index="332" value="Pacific/Marquesas"/>
+                <StringItem index="333" value="Pacific/Nauru"/>
+                <StringItem index="334" value="Pacific/Niue"/>
+                <StringItem index="335" value="Pacific/Norfolk"/>
+                <StringItem index="336" value="Pacific/Noumea"/>
+                <StringItem index="337" value="Pacific/Pago_Pago"/>
+                <StringItem index="338" value="Pacific/Palau"/>
+                <StringItem index="339" value="Pacific/Pitcairn"/>
+                <StringItem index="340" value="Pacific/Pohnpei"/>
+                <StringItem index="341" value="Pacific/Port_Moresby"/>
+                <StringItem index="342" value="Pacific/Rarotonga"/>
+                <StringItem index="343" value="Pacific/Tahiti"/>
+                <StringItem index="344" value="Pacific/Tarawa"/>
+                <StringItem index="345" value="Pacific/Tongatapu"/>
+                <StringItem index="346" value="Pacific/Wake"/>
+                <StringItem index="347" value="Pacific/Wallis"/>
               </StringArray>
             </Property>
           </Properties>
