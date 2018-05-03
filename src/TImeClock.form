@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[846, 370]"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -39,48 +44,52 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cTimeLabel" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="currentTime" min="-2" pref="193" max="-2" attributes="0"/>
-                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="convertButton" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="timeDiffLabel" min="-2" pref="81" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cTimeLabel" min="-2" pref="193" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="timeDiffLabel" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="timeDiff" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="currentTime" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="timeDiff" min="-2" pref="137" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="oTimeZone" alignment="1" max="32767" attributes="0"/>
+                              <Component id="oTimeLabel" alignment="1" pref="206" max="32767" attributes="0"/>
+                              <Component id="otherTime" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cTimeZone" min="-2" pref="193" max="-2" attributes="0"/>
+                              <Component id="cTimeZoneScroll" min="-2" pref="203" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="utcLabel" min="-2" pref="81" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="utcTime" min="-2" pref="81" max="-2" attributes="0"/>
+                                  <EmptySpace pref="139" max="32767" attributes="0"/>
+                                  <Component id="oTimeZoneScroll" min="-2" pref="206" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="oTimeLabel" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
-                      <Component id="otherTime" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cTimeZoneScroll" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
-                      <Component id="cTimeZone" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="utcTime" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="utcLabel" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
-                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="oTimeZone" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
-                      <Component id="oTimeZoneScroll" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="convertButton" min="-2" pref="178" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="304" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -105,7 +114,7 @@
                           <Component id="convertButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="timeDiffLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="timeDiff" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -121,7 +130,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                  <EmptySpace pref="61" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -160,7 +169,7 @@
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Dest. Time"/>
+            <Property name="text" type="java.lang.String" value="Destination Time"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cTimeZoneScroll">
@@ -890,7 +899,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="convertButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Convert Time Diff."/>
+            <Property name="text" type="java.lang.String" value="Convert Time Difference"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="convertButtonActionPerformed"/>
